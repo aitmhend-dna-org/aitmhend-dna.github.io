@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const main = document.getElementById('main-content');
     if (!main) return;
 
+    // A landing page's card titles are navigation, not article sections — a TOC
+    // of them just repeats what is already on screen (#51).
+    if (main.dataset.readingAids === 'off') return;
+
     const headings = Array.from(main.querySelectorAll('h2'));
     if (headings.length < 3) return;
     main.classList.add('has-reading-aids');
