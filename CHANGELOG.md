@@ -7,11 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Three research summaries that had been sitting unpublished on the old fork since PR #8 and never reached the live site: Canary Islands Amazigh history (Santana et al. 2025), demographic modelling of Amazigh–Arab divergence (2024), and Islamic-period Ibiza gene flow (2026). The research index now lists 12 papers
 - A Limitations page stating what two haplogroups can and cannot show — two ancestral lines out of more than a thousand, why a haplogroup is not an ethnicity, and how wide the TMRCA ranges actually are (#49)
 - A visible "Last updated" date on every page, kept in step with JSON-LD `dateModified` and `sitemap.xml` (#48)
 - A sourcing note on the culture page stating plainly that its material comes from community and family knowledge rather than peer-reviewed literature (#47)
 
 ### Changed
+- The nine existing research articles were brought onto the current design: constant brand bar, page title as the `<h1>` in `<main>`, sequential heading levels, WebP imagery, corrected social images and the shared footer. The brand-bar work in #50 had only reached the top-level pages, because the articles' markup is minified and the regex missed them
 - Removed emoji from 77 headings across the site; #24 had only covered part of one page (#61)
 - One consistent footer on every page — three variants existed, and most research articles had no secondary navigation at all
 - The site name is now a constant brand bar on every page; the page title moved into `<main>` as the `<h1>`, so the brand no longer disappears as you navigate (#50)
@@ -27,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Social previews now use a real 1200x630 `og-card.jpg`. `og:image` had been pointing at a 2340x1334 PNG while declaring 1200x630, so previews were mis-sized; it stays JPEG because crawler support for WebP is still uneven
 
 ### Fixed
+- Two contrast failures in article-only components: the hero caption used Tailwind's `#6B7280` at 4.39:1 and the paper date `#8B7355` at 4.22:1. Both now use `--text-secondary`
 - Five inline `font-family` declarations still asked for Space Grotesk, Inter or Lexend after the type change, none of which are loaded any more, so those elements silently fell back to a browser default
 - Cumulative Layout Shift on `lineage.html` dropped from 0.32 to 0.05. The table of contents is injected by JavaScript after parse, and below the rail breakpoint it lands in normal flow — an expanded nine-item list shoved the article down the page. It now starts collapsed there, and the diagram container reserves its height
 - `.toc-card.is-collapsed .toc-list` set `display: flex`, so collapsing the table of contents did not actually collapse it
