@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Social previews now use a real 1200x630 `og-card.jpg`. `og:image` had been pointing at a 2340x1334 PNG while declaring 1200x630, so previews were mis-sized; it stays JPEG because crawler support for WebP is still uneven
 
 ### Fixed
+- Five inline `font-family` declarations still asked for Space Grotesk, Inter or Lexend after the type change, none of which are loaded any more, so those elements silently fell back to a browser default
 - Cumulative Layout Shift on `lineage.html` dropped from 0.32 to 0.05. The table of contents is injected by JavaScript after parse, and below the rail breakpoint it lands in normal flow — an expanded nine-item list shoved the article down the page. It now starts collapsed there, and the diagram container reserves its height
 - `.toc-card.is-collapsed .toc-list` set `display: flex`, so collapsing the table of contents did not actually collapse it
 - Paternal and maternal lineages are now distinguishable in the diagrams and charts. Series colours follow a luminance-ordered warm ramp (3.27:1 in greyscale, up from 2.26:1) and carry a non-colour identifier: the maternal branch and node are dashed, the second line series has a dash pattern and its own point marker
