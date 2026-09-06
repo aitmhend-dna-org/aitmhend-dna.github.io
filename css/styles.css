@@ -1,7 +1,6 @@
 /* Scientific Research Portal - DNA Lineage Heritage */
 
 /* Import Professional Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
 :root {
     /* Amazigh Earth-Tone Palette — no blues (issue #36) */
@@ -77,8 +76,9 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    line-height: 1.65;
+    font-family: 'Literata', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
     color: var(--text-primary);
     background: var(--background);
     -webkit-font-smoothing: antialiased;
@@ -125,7 +125,7 @@ header {
 }
 
 .site-brand-name {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
     font-weight: 700;
     font-size: clamp(0.95rem, 1.6vw, 1.1rem);
     letter-spacing: -0.01em;
@@ -138,7 +138,7 @@ header {
 
 /* The <h1> now lives in <main>, so the header can stay constant across pages. */
 .page-title {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
     font-size: clamp(1.9rem, 4.2vw, 2.6rem);
     font-weight: 700;
     line-height: 1.12;
@@ -156,7 +156,7 @@ header {
 }
 
 .header-content h1 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
     font-size: clamp(1rem, 2vw, 1.25rem);
     font-weight: 700;
     color: #3E2723;
@@ -438,7 +438,7 @@ main > .card:first-child {
 }
 
 .card h2 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
     color: var(--primary-dark);
     margin-bottom: 1.5rem;
     font-size: 2rem;
@@ -453,7 +453,7 @@ main > .card:first-child {
 }
 
 .card h3 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
     color: var(--primary-navy);
     margin: 2rem 0 1rem;
     font-size: 1.5rem;
@@ -771,7 +771,7 @@ main > .card:first-child {
 .data-table th {
     padding: 1.25rem 1.5rem;
     text-align: left;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
     font-weight: 600;
     font-size: 0.875rem;
     color: #FFFFFF;
@@ -1106,7 +1106,7 @@ footer a:hover {
 }
 
 .filter-section h3 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--primary-dark);
@@ -1472,7 +1472,7 @@ footer a:hover {
 
 /* Geographic and genetic visualization styles */
 .region-map text, .genetic-diagram text, .phylogenetic-tree text {
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .genetic-diagram {
@@ -1982,7 +1982,7 @@ select:focus {
     color: #fff;
     margin: 0;
     font-size: clamp(1.6rem, 3vw, 2rem);
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
     text-wrap: balance;
 }
 
@@ -2011,7 +2011,7 @@ select:focus {
 }
 
 .genetics-stat-value {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
     font-size: clamp(2rem, 4vw, 2.6rem);
     font-weight: 700;
     color: var(--primary-dark);
@@ -3202,7 +3202,7 @@ select:focus {
 }
 
 .discovery-card h4 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
     color: var(--primary-dark);
     font-size: 1.15rem;
     font-weight: 600;
@@ -3245,7 +3245,7 @@ select:focus {
 
 .tech-card h4,
 .method-card h4 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
     color: var(--primary-navy);
     margin-bottom: 1rem;
     font-size: 1.2rem;
@@ -3298,7 +3298,7 @@ select:focus {
 }
 
 .evolution-content h3 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
     color: var(--primary-dark);
     margin-bottom: 0.75rem;
 }
@@ -3328,7 +3328,7 @@ select:focus {
 }
 
 .haplogroup-type h4 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
     color: var(--primary-navy);
     font-size: 1.3rem;
     margin-bottom: 0.75rem;
@@ -3378,7 +3378,7 @@ select:focus {
 }
 
 .migration-content h4 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
     color: var(--primary-dark);
     font-size: 1.2rem;
     margin-bottom: 0.75rem;
@@ -3473,7 +3473,7 @@ select:focus {
 }
 
 .period-content h3 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
     color: var(--primary-dark);
     font-size: 1.4rem;
     margin-bottom: 0.75rem;
@@ -3513,7 +3513,7 @@ select:focus {
 }
 
 .impact-point h4 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
     color: var(--primary-navy);
     margin-bottom: 1rem;
 }
@@ -3798,7 +3798,7 @@ select:focus {
 .related-link-card h4 {
     margin: 0 0 0.5rem;
     color: var(--primary-dark);
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
     font-size: 1rem;
 }
 
@@ -4008,7 +4008,7 @@ select:focus {
     color: #3E2723;
     margin-bottom: 0.75rem;
     line-height: 1.4;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .discovery-summary {
@@ -4165,7 +4165,7 @@ select:focus {
 .glossary-term-title {
     margin: 0 0 0.6rem;
     color: #3E2723;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .glossary-term-copy {
@@ -4828,7 +4828,7 @@ main#main-content.has-reading-aids {
     margin: 0 0 0.65rem;
     font-size: 1.35rem;
     color: #3E2723;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .home-map-copy {
@@ -5383,3 +5383,45 @@ select:focus-visible {
 }
 
 .sourcing-note strong { color: var(--text-primary); }
+
+/* #56 — Literata is a reading face, so give running text a real measure.
+   Applies to prose only: tables, grids and diagrams set their own width. */
+.card > p,
+.card > ul,
+.card > ol {
+    max-width: 72ch;
+}
+
+.card > p + p { margin-top: 0.9rem; }
+
+/* Headings stay on the grotesque so the contrast between reading and chrome
+   carries meaning: prose is Literata, labels and structure are Archivo. */
+.home-section-kicker,
+.toc-card .toc-title,
+.page-updated,
+.breadcrumb {
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.page-updated { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
+
+/* Chrome takes the grotesque, prose takes the serif. The contrast is the
+   point: what you read is Literata, what you navigate by is Archivo. */
+.nav-container a,
+.toc-list a,
+.btn,
+.footer-nav a,
+.site-brand-name,
+.home-section-cta,
+.hero-secondary-link,
+.meta-pill,
+th {
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* On the landing page the revision date is a footnote, not a byline. */
+.page-updated-footer {
+    margin: 2.5rem 0 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+}
