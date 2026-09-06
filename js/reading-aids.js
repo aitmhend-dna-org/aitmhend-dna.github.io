@@ -57,6 +57,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const tocList = toc.querySelector('.toc-list');
     const tocToggle = toc.querySelector('.toc-toggle');
 
+    // On the rail breakpoint the TOC sits beside the text and costs no layout.
+    // Below it the TOC is in normal flow, so injecting an expanded 9-item list
+    // after parse shoves the article down the page (CLS ~0.32 measured live).
+    const hasRail = window.matchMedia('(min-width: 1024px)').matches;
+    if (!hasRail) {
+        toc.classList.add('is-collapsed');
+        tocToggle.textContent = 'Show sections';
+        tocToggle.setAttribute('aria-expanded', 'false');
+    }
+
     headings.forEach(function (heading) {
         const li = document.createElement('li');
         const a = document.createElement('a');

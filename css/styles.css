@@ -4246,7 +4246,7 @@ select:focus {
 
 /* collapsed state no longer used but kept for JS compat */
 .toc-card.is-collapsed .toc-list {
-    display: flex;
+    display: none;
 }
 
 .toc-card.is-collapsed {
@@ -5424,4 +5424,19 @@ th {
     margin: 2.5rem 0 0;
     padding-top: 1.25rem;
     border-top: 1px solid var(--border);
+}
+
+/* Reserve space for content that arrives after parse, so it does not shove the
+   article down the page. Measured CLS on lineage.html was 0.32 live. */
+.mermaid {
+    min-height: 320px;
+    align-items: center;
+}
+
+.toc-card {
+    contain-intrinsic-size: auto 44px;
+}
+
+@media (min-width: 1024px) {
+    .mermaid { min-height: 380px; }
 }
