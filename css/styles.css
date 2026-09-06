@@ -97,18 +97,6 @@ header {
     border-bottom: none;
 }
 
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('../img/berber-pattern-bg.jpg');
-    background-size: 150px 150px;
-    opacity: 0.08;
-    pointer-events: none;
-}
 
 .header-content {
     max-width: 1200px;
@@ -121,13 +109,44 @@ header::before {
     gap: 0.9rem;
 }
 
-.header-content::before {
-    content: '';
-    display: block;
+.site-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.site-brand-mark {
     flex: 0 0 auto;
-    width: clamp(36px, 4vw, 48px);
-    height: clamp(36px, 4vw, 48px);
+    width: clamp(32px, 3.4vw, 40px);
+    height: clamp(32px, 3.4vw, 40px);
     background: url('../img/site-logo-mark.png') center / contain no-repeat;
+}
+
+.site-brand-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+    letter-spacing: -0.01em;
+    color: var(--primary-dark);
+    line-height: 1.2;
+}
+
+.site-brand:hover .site-brand-name { color: var(--accent-text); }
+.site-brand:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 4px; }
+
+/* The <h1> now lives in <main>, so the header can stay constant across pages. */
+.page-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.9rem, 4.2vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--primary-dark);
+    text-wrap: balance;
+    max-width: 22ch;
+    margin: 0.5rem 0 2rem;
 }
 
 .header-text {
@@ -426,9 +445,7 @@ main > .card:first-child {
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.2;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    text-wrap: balance;
 }
 
 .card h2:first-child {
@@ -483,91 +500,6 @@ main > .card:first-child {
    HERO SECTIONS
    ======================================== */
 
-.hero {
-    background: linear-gradient(135deg, 
-        rgba(10, 37, 64, 0.95) 0%, 
-        rgba(30, 58, 95, 0.92) 50%, 
-        rgba(205, 127, 50, 0.88) 100%
-    ),
-    url('../img/berber-pattern-bg.jpg');
-    background-size: cover, 200px 200px;
-    background-position: center, center;
-    background-blend-mode: overlay;
-    position: relative;
-    padding: 5rem 3rem;
-    border-radius: var(--radius-xl);
-    margin-bottom: 3rem;
-    overflow: hidden;
-    box-shadow: var(--shadow-xl);
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 30% 40%, rgba(139, 92, 246, 0.15) 0%, transparent 60%),
-        radial-gradient(circle at 70% 60%, rgba(6, 182, 212, 0.15) 0%, transparent 60%),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-    pointer-events: none;
-    animation: subtle-shift 20s ease-in-out infinite;
-}
-
-@keyframes subtle-shift {
-    0%, 100% { transform: translateX(0) translateY(0); }
-    50% { transform: translateX(2%) translateY(-2%); }
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    right: 5%;
-    bottom: 0;
-    pointer-events: none;
-    opacity: 0.6;
-}
-
-.hero-dna {
-    animation: dna-rotate 15s linear infinite;
-}
-
-@keyframes dna-rotate {
-    0% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-15px) rotate(180deg); }
-    100% { transform: translateY(0) rotate(360deg); }
-}
-
-.hero h1,
-.hero h2 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 700;
-    color: #FFFFFF;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-    position: relative;
-    z-index: 1;
-}
-
-.hero p {
-    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
-    color: rgba(255, 255, 255, 0.95);
-    max-width: 900px;
-    margin: 0 auto 2.5rem;
-    line-height: 1.75;
-    position: relative;
-    z-index: 1;
-}
-
-.hero .btn {
-    position: relative;
-    z-index: 1;
-    margin: 0.5rem;
-}
 
 /* ========================================
    BUTTONS & INTERACTIVE ELEMENTS
@@ -4761,10 +4693,13 @@ main#main-content.has-reading-aids {
 
 .home-hero-title {
     display: block;
-    font-size: clamp(1.95rem, 4vw, 2.25rem);
-    line-height: 1.2;
+    font-size: clamp(2rem, 4.2vw, 2.6rem);
+    line-height: 1.14;
+    letter-spacing: -0.02em;
     margin-bottom: 1.25rem;
     color: #3E2723;
+    text-wrap: balance;
+    max-width: 20ch;
 }
 
 .home-hero-accent {
@@ -5279,4 +5214,32 @@ select:focus-visible {
     .era-grid-3 {
         grid-template-columns: minmax(0, 1fr);
     }
+}
+
+/* #55 — the hero carried three equally-weighted CTAs that wrapped to a second
+   row. One primary action, one subordinate text link. */
+.home-hero-actions { align-items: center; gap: 1.5rem; }
+
+.hero-secondary-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--accent-text);
+    text-underline-offset: 3px;
+}
+.hero-secondary-link:hover { color: var(--accent-text-hover); }
+
+/* Header is chrome now: a constant bar, not a per-page title block. */
+.header-content { padding-top: 0.85rem; padding-bottom: 0.85rem; }
+
+/* The TOC heading is an <h2> for document-outline reasons (the page <h1> now
+   sits above it in <main>), but it is chrome — it must not read like a section
+   title, so it keeps its original small size. */
+.toc-card .toc-title {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin: 0;
+    display: block;
 }

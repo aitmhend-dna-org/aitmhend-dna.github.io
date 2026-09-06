@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
     toc.setAttribute('aria-label', 'Table of contents');
     toc.innerHTML = [
         '<div class="toc-header">',
-        '<h3 class="toc-title">On This Page</h3>',
+        '<h2 class="toc-title">On This Page</h2>',
         '<button type="button" class="toc-toggle" aria-expanded="true">Hide sections</button>',
         '</div>',
         '<ol class="toc-list"></ol>'
@@ -62,9 +62,9 @@ document.addEventListener('DOMContentLoaded', function () {
         tocList.appendChild(li);
     });
 
-    const meta = main.querySelector('.editorial-meta');
-    if (meta && meta.nextSibling) {
-        main.insertBefore(toc, meta.nextSibling);
+    const anchor = main.querySelector('.editorial-meta') || main.querySelector('.page-title');
+    if (anchor && anchor.nextSibling) {
+        main.insertBefore(toc, anchor.nextSibling);
     } else {
         main.insertBefore(toc, main.firstChild);
     }
