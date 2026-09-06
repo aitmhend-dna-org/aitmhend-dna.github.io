@@ -14,31 +14,30 @@ This is a **no-build static site** — plain HTML, CSS, and vanilla JS. No packa
 
 - **Edit and preview directly** — open any `.html` file in a browser
 - **Deployment** — automatic via GitHub Pages from main branch
-- **External deps (CDN only):** Chart.js, Google Fonts (Inter, Space Grotesk, IBM Plex Mono)
+- **External deps (CDN only):** Chart.js, Mermaid, Google Fonts (Literata, Archivo, IBM Plex Mono)
 - **Contact form:** Formspree (ID: myzbzgjn)
 
 ## Architecture
 
-- `index.html`, `lineage.html`, `genetics.html`, `culture.html`, `contact.html` — the five site pages
-- `css/styles.css` — single stylesheet (~3600 lines) with CSS custom properties defined in `:root`
-- `img/` — image assets (heritage photos, genetic maps, pattern overlays)
+- `index.html`, `lineage.html`, `genetics.html`, `culture.html`, `research.html`, `contact.html`,
+  `start-here.html`, `glossary.html`, `maps-sites.html`, `limitations.html` — the site pages
+- `research/*.html` — nine paper summaries
+- `css/styles.css` — single stylesheet with CSS custom properties in one `:root`
+- `js/reading-aids.js` — TOC rail, reading progress, back-to-top
+- `img/` — WebP imagery (plus `og-card.jpg` for social and `site-logo-mark.png`)
 - `docs/` — research notes and SEO documentation
-- All JS is inline within HTML files (no separate JS modules)
+- Chart.js and Mermaid configs are inline per page; shared behaviour is in `js/reading-aids.js`
 
-Every page follows the same structure: `<header>` with gradient border → sticky `<nav>` → `<main id="main-content">` with card-based sections → `<footer>`. Each page includes full SEO markup (Open Graph, Twitter Cards, JSON-LD structured data, canonical URLs, geo-tags).
+Every page follows the same structure: constant brand `<header>` → sticky `<nav>` → breadcrumb → `<main id="main-content">` carrying the page `<h1>` → shared `<footer>`. Each page includes full SEO markup (Open Graph, Twitter Cards, JSON-LD structured data, canonical URLs, geo-tags).
 
-## Design System (Critical Rules)
+## Design System
 
-The authoritative design reference is `.cursorrules` (472 lines) and `.github/copilot-instructions.md`. Key rules:
+**All design rules live in `DESIGN.md` at the repository root.** Read it before
+changing any styling.
 
-- **NEVER use blue colors** — removed for appearing "AI-generated." The palette is exclusively warm earth tones.
-- **Color palette:** Terracotta `#CD7F32` (primary), Ochre `#CC8E35`, Clay `#D2691E`, Warm Sand `#E2A36B`, Burnt Sienna `#8B4513`, Deep Brown `#3E2723`
-- **Gradient borders:** `linear-gradient(90deg, #CD7F32 0%, #CC8E35 50%, #D2691E 100%)`
-- **Card backgrounds:** Subtle gradients at 3-6% opacity only
-- **Border radius:** 3-8px max — no rounded bubbles
-- **Typography:** Inter (body), Space Grotesk (headings), IBM Plex Mono (technical)
-- **Touch targets:** Min 44px height for buttons/links
-- **Responsive breakpoints:** Desktop >1024px, Tablet 768-1024px, Mobile <768px
+`.cursorrules` and `.github/copilot-instructions.md` are pointers to the same file.
+They previously held 853 lines between them that contradicted each other and the
+stylesheet; that is what #59 resolved. Do not reintroduce a second copy.
 
 ## Content & Terminology
 
@@ -53,6 +52,6 @@ The authoritative design reference is `.cursorrules` (472 lines) and `.github/co
 
 - Title tags: 40-50 characters
 - Meta descriptions: 150-160 characters
-- All images: descriptive alt text, explicit width/height, `loading="lazy"`
+- All images: descriptive alt text, explicit width/height; `loading="lazy"` below the fold only
 - Maintain JSON-LD schema markup (WebSite, Article, ScholarlyArticle, ContactPage)
 - Update `sitemap.xml` lastmod dates when pages change
