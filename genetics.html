@@ -628,7 +628,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const chartFont = {
-                family: 'Lexend',
+                family: 'Archivo',
                 size: 12
             };
 
@@ -643,18 +643,23 @@
                             {
                                 label: 'Global Population (millions)',
                                 data: [0.1, 0.01, 1, 5, 50, 8000],
-                                borderColor: '#D4A629',
-                                backgroundColor: 'rgba(212, 166, 41, 0.1)',
+                                borderColor: '#8B4513',
+                                backgroundColor: 'rgba(139, 69, 19, 0.10)',
                                 fill: true,
-                                tension: 0.4
+                                tension: 0.4,
+                                pointStyle: 'circle',
+                                pointRadius: 4
                             },
                             {
                                 label: 'Continental Populations',
                                 data: [1, 2, 4, 5, 6, 7],
-                                borderColor: '#8B4513',
-                                backgroundColor: 'rgba(205, 127, 50, 0.1)',
+                                borderColor: '#E2A36B',
+                                backgroundColor: 'rgba(226, 163, 107, 0.10)',
                                 fill: false,
                                 tension: 0.4,
+                                borderDash: [7, 4],
+                                pointStyle: 'triangle',
+                                pointRadius: 5,
                                 yAxisID: 'y1'
                             }
                         ]
