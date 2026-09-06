@@ -200,11 +200,11 @@ flowchart LR
     A -->|"Maternal"| C
     
     style A fill:#EDE6DA,stroke:#8B7355,stroke-width:2.5px,color:#3E2723
-    style B fill:#FBF1E6,stroke:#CD7F32,stroke-width:2.5px,color:#3E2723,text-align:left
-    style C fill:#F1E7DC,stroke:#8B4513,stroke-width:2.5px,color:#3E2723,text-align:left
+    style B fill:#F7E8D5,stroke:#8B4513,stroke-width:3px,color:#3E2723,text-align:left
+    style C fill:#FDF7EF,stroke:#8B4513,stroke-width:3px,color:#3E2723,text-align:left,stroke-dasharray: 6 4
     
     linkStyle 0 stroke:#D4A629,stroke-width:2.5px
-    linkStyle 1 stroke:#8B4513,stroke-width:2.5px
+    linkStyle 1 stroke:#8B4513,stroke-width:2.5px,stroke-dasharray: 6 4
                 </div>
                 
                 <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
@@ -631,7 +631,7 @@ flowchart LR
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const chartFont = {
-                family: 'Lexend',
+                family: 'Archivo',
                 size: 14
             };
 
@@ -646,7 +646,9 @@ flowchart LR
                             {
                                 label: 'Paternal (Y-DNA)',
                                 data: [75, 25],
-                                backgroundColor: '#D4A629',
+                                backgroundColor: '#E2A36B',
+                                borderColor: '#8B4513',
+                                borderWidth: 1,
                                 barPercentage: 0.7,
                                 categoryPercentage: 0.6
                             },
@@ -654,6 +656,8 @@ flowchart LR
                                 label: 'Maternal (mtDNA)',
                                 data: [55, 45],
                                 backgroundColor: '#8B4513',
+                                borderColor: '#3E2723',
+                                borderWidth: 1,
                                 barPercentage: 0.7,
                                 categoryPercentage: 0.6
                             }
