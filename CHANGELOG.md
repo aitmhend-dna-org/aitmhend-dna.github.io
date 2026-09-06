@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - A sourcing note on the culture page stating plainly that its material comes from community and family knowledge rather than peer-reviewed literature (#47)
 
 ### Changed
+- Research thumbnails now show each paper's actual study region. Six of the twelve cards had shared one generic Maghreb satellite image while their alt text claimed to show the Canary Islands, the Balearics or Algeria and Tunisia — descriptions the image did not match. Five region crops were cut from the full-resolution original, and every alt text and caption now describes what is really in frame
+- Article hero images and captions realigned to the same assignment; `punic-genetic-diversity-2025` had no hero at all
 - The nine existing research articles were brought onto the current design: constant brand bar, page title as the `<h1>` in `<main>`, sequential heading levels, WebP imagery, corrected social images and the shared footer. The brand-bar work in #50 had only reached the top-level pages, because the articles' markup is minified and the regex missed them
 - Removed emoji from 77 headings across the site; #24 had only covered part of one page (#61)
 - One consistent footer on every page — three variants existed, and most research articles had no secondary navigation at all
@@ -29,6 +31,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Social previews now use a real 1200x630 `og-card.jpg`. `og:image` had been pointing at a 2340x1334 PNG while declaring 1200x630, so previews were mis-sized; it stays JPEG because crawler support for WebP is still uneven
 
 ### Fixed
+- `research.html` showed two contradictory dates — "Last updated: 6 September 2026" beside a stale pill reading "Last updated: July 9, 2026"
+- Every research thumbnail and hero now carries explicit `width`/`height`, so images reserve their space instead of shifting layout as they load
 - Two contrast failures in article-only components: the hero caption used Tailwind's `#6B7280` at 4.39:1 and the paper date `#8B7355` at 4.22:1. Both now use `--text-secondary`
 - Five inline `font-family` declarations still asked for Space Grotesk, Inter or Lexend after the type change, none of which are loaded any more, so those elements silently fell back to a browser default
 - Cumulative Layout Shift on `lineage.html` dropped from 0.32 to 0.05. The table of contents is injected by JavaScript after parse, and below the rail breakpoint it lands in normal flow — an expanded nine-item list shoved the article down the page. It now starts collapsed there, and the diagram container reserves its height
