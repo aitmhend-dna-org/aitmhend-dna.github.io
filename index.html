@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Google Search Console Verification -->
-    <!-- TODO: Add your Google verification meta tag here after adding property in Search Console -->
-    <!-- Example: <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> -->
-    
     <!-- SEO Meta Tags -->
     <title>North African Amazigh DNA Heritage | E-PF2546 & H1 Research</title>
     <meta name="description" content="Genetic analysis of Amazigh Chtouka lineage: E-PF2546 Y-DNA (~300 BCE) and H1 mtDNA (~11,400 years) from Souss-Massa, Morocco. Research-backed heritage.">
@@ -60,14 +56,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#2F7FA5">
-    <meta name="msapplication-TileColor" content="#2F7FA5">
+    <meta name="theme-color" content="#3E2723">
+    <meta name="msapplication-TileColor" content="#3E2723">
     
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     
+    <!-- LCP hero: discovered early, never lazy (issue #39) -->
+    <link rel="preload" as="image" href="img/hero-dna-morocco.jpg" fetchpriority="high">
+
     <!-- CSS and Scripts -->
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/reading-aids.js" defer></script>
@@ -182,16 +181,6 @@
         </div>
     </nav>
 
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="Breadcrumb" class="breadcrumb">
-        <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span itemprop="name">Home</span>
-                <meta itemprop="position" content="1" />
-            </li>
-        </ol>
-    </nav>
-
     <main id="main-content" class="container" role="main">
         <!-- Introduction Section -->
         <section class="card home-hero-card" itemscope itemtype="https://schema.org/ScholarlyArticle">
@@ -210,7 +199,7 @@
                     </div>
                 </div>
                 <div class="home-hero-media">
-                    <img src="img/hero-dna-morocco.jpg" alt="DNA helix visualization showing genetic heritage analysis of Amazigh Chtouka lineage from Souss-Massa, Morocco" width="800" height="300" class="home-hero-image" loading="lazy">
+                    <img src="img/hero-dna-morocco.jpg" alt="DNA helix visualization showing genetic heritage analysis of Amazigh Chtouka lineage from Souss-Massa, Morocco" width="800" height="300" class="home-hero-image" fetchpriority="high" decoding="async">
                     <div class="home-hero-meta">
                         <div class="home-hero-meta-title">Study Timeline</div>
                         <div class="home-hero-meta-copy">Research Period: 2023-2026 | 11,000+ Years Heritage Span</div>

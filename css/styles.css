@@ -4,15 +4,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
 :root {
-    /* Amazigh Earth-Tone Palette — no blues allowed */
+    /* Amazigh Earth-Tone Palette — no blues (issue #36) */
     --primary-dark: #3E2723;        /* deep warm brown */
-    --primary-terracotta: #D4A629;  /* gold ochre */
+    --primary-terracotta: #CD7F32;  /* terracotta — DECORATION only (2.96:1, not text-safe) */
     --primary-clay: #CD7F32;        /* copper/bronze */
     --accent-ochre: #E4C258;
     --accent-warm-sand: #E2A36B;
     --accent-burnt-sienna: #CD7F32; /* copper */
     --accent-amber: #D4915D;
     --deep-indigo: #3E2723;         /* renamed but kept brown */
+
+    /* Accents split by role (issue #33). The brand hues above are for
+       DECORATION only — borders, rails, dividers, decorative fills. Text uses
+       --accent-text; solid fills carrying white text use --accent-solid. */
+    --accent-text: #94571B;         /* 5.44:1 on #FAF8F4, 4.93:1 on the darkest card ground */
+    --accent-text-hover: #8F531A;   /* 5.79:1 */
+    --accent-solid: #8B4513;        /* burnt sienna — white on it = 7.10:1 */
 
     /* Neutrals — warm tint */
     --gray-50: #FAF8F4;
@@ -47,13 +54,15 @@
     --transition: all 0.25s ease;
 
     /* Legacy aliases */
-    --primary-color: var(--primary-terracotta);
-    --secondary-color: var(--accent-ochre);
+    --primary-color: var(--accent-text);      /* text-safe; decoration uses --primary-terracotta */
+    --secondary-color: var(--accent-text);    /* --accent-ochre is 1.6:1, never legal as text */
     --accent-color: var(--primary-clay);
     --background-color: var(--background);
     --border-radius: var(--radius-md);
     --shadow: var(--shadow-md);
     --primary-navy: var(--deep-indigo);
+    --text-color: var(--text-primary);   /* referenced in HTML, previously undefined */
+    --highlight-color: #F2BE6F;          /* decorative only */
 }
 
 * {
@@ -206,7 +215,7 @@ header::before {
 }
 
 .nav-container a:hover {
-    color: var(--primary-terracotta);
+    color: var(--accent-text);
     background: var(--gray-50);
 }
 
@@ -225,7 +234,7 @@ header::before {
 }
 
 .btn-copper {
-    background: #D4A629;
+    background: var(--accent-solid);
 }
 
 .btn-copper:hover {
@@ -309,9 +318,9 @@ main#main-content {
     }
 
     .nav-container {
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        overflow-x: auto;
+        justify-content: center;
+        flex-wrap: wrap;
+        overflow-x: visible;
         gap: 0.4rem;
         padding-top: 0.4rem;
         padding-bottom: 0.4rem;
@@ -478,7 +487,7 @@ main > .card:first-child {
     background: linear-gradient(135deg, 
         rgba(10, 37, 64, 0.95) 0%, 
         rgba(30, 58, 95, 0.92) 50%, 
-        rgba(37, 99, 235, 0.88) 100%
+        rgba(205, 127, 50, 0.88) 100%
     ),
     url('../img/berber-pattern-bg.jpg');
     background-size: cover, 200px 200px;
@@ -570,7 +579,7 @@ main > .card:first-child {
     justify-content: center;
     gap: 0.5rem;
     padding: 0.875rem 1.75rem;
-    background: #D4A629;
+    background: var(--accent-solid);
     color: #FFFFFF;
     text-decoration: none;
     border-radius: 8px;
@@ -599,15 +608,15 @@ main > .card:first-child {
 
 .btn-outline {
     background: transparent;
-    border: 2px solid #D4A629;
-    color: #D4A629;
+    border: 2px solid var(--accent-text);
+    color: var(--accent-text);
     box-shadow: none;
 }
 
 .btn-outline:hover {
-    background: #D4A629;
+    background: var(--accent-solid);
     color: #FFFFFF;
-    border-color: #D4A629;
+    border-color: var(--accent-text);
     box-shadow: 0 4px 12px rgba(212, 166, 41, 0.25);
 }
 
@@ -696,7 +705,7 @@ main > .card:first-child {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--primary-blue), var(--accent-cyan), var(--accent-emerald));
+    background: linear-gradient(90deg, var(--primary-dark), var(--accent-solid), var(--accent-warm-sand));
 }
 
 .stat-card:hover {
@@ -707,7 +716,7 @@ main > .card:first-child {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--primary-blue);
+    color: var(--primary-dark);
     margin-bottom: 0.5rem;
 }
 
@@ -741,7 +750,7 @@ main > .card:first-child {
     top: 0;
     bottom: 0;
     width: 3px;
-    background: linear-gradient(180deg, var(--primary-blue), var(--accent-teal), var(--accent-emerald));
+    background: linear-gradient(180deg, var(--primary-dark), var(--primary-terracotta), var(--accent-warm-sand));
     transform: translateX(-50%);
     border-radius: 2px;
 }
@@ -761,7 +770,7 @@ main > .card:first-child {
 .timeline-item:hover {
     box-shadow: var(--shadow-xl);
     transform: translateY(-3px);
-    border-color: var(--accent-teal);
+    border-color: var(--accent-text);
 }
 
 .timeline-item:nth-child(odd) {
@@ -778,10 +787,10 @@ main > .card:first-child {
     top: 2rem;
     width: 18px;
     height: 18px;
-    background: linear-gradient(135deg, var(--primary-blue), var(--accent-teal));
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-terracotta));
     border-radius: 50%;
     border: 3px solid var(--surface);
-    box-shadow: 0 0 0 3px var(--accent-teal);
+    box-shadow: 0 0 0 3px var(--primary-terracotta);
     z-index: 1;
 }
 
@@ -795,7 +804,7 @@ main > .card:first-child {
 
 .timeline-item h3 {
     font-family: 'IBM Plex Mono', monospace;
-    color: var(--primary-blue);
+    color: var(--primary-dark);
     font-size: 1.1rem;
     margin-bottom: 0.75rem;
     font-weight: 600;
@@ -866,7 +875,7 @@ main > .card:first-child {
 }
 
 .data-table a {
-    color: var(--primary-terracotta);
+    color: var(--accent-text);
     text-decoration: none;
     transition: all 0.2s ease;
 }
@@ -932,7 +941,7 @@ img {
 }
 
 .highlight {
-    color: var(--primary-blue);
+    color: var(--primary-dark);
     font-weight: 600;
     position: relative;
 }
@@ -944,7 +953,7 @@ img {
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-emerald));
+    background: linear-gradient(90deg, var(--accent-solid), var(--accent-warm-sand));
     border-radius: 2px;
 }
 
@@ -982,14 +991,14 @@ img {
 }
 
 .breadcrumb a {
-    color: #D4A629;
+    color: var(--accent-text);
     text-decoration: none;
     transition: color 0.2s ease;
     font-weight: 500;
 }
 
 .breadcrumb a:hover {
-    color: #E4C258;
+    color: var(--accent-text);
 }
 
 /* Skip to main content */
@@ -1033,9 +1042,9 @@ footer::before {
     height: 1px;
     background: linear-gradient(90deg, 
         transparent, 
-        var(--accent-teal), 
-        var(--accent-cyan), 
-        var(--accent-emerald), 
+        var(--primary-terracotta), 
+        var(--accent-solid), 
+        var(--accent-warm-sand), 
         transparent
     );
 }
@@ -1061,7 +1070,7 @@ footer p {
 }
 
 footer a {
-    color: var(--accent-cyan);
+    color: var(--accent-text);
     text-decoration: none;
     transition: var(--transition);
     border-bottom: 1px solid transparent;
@@ -1069,7 +1078,7 @@ footer a {
 
 footer a:hover {
     color: #FFFFFF;
-    border-bottom-color: var(--accent-cyan);
+    border-bottom-color: var(--accent-text);
 }
 
 .footer-nav {
@@ -1329,9 +1338,9 @@ footer a:hover {
     }
     
     .nav-container {
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        overflow-x: auto;
+        justify-content: center;
+        flex-wrap: wrap;
+        overflow-x: visible;
         gap: 0.4rem;
         padding-top: 0.4rem;
         padding-bottom: 0.4rem;
@@ -1581,7 +1590,7 @@ footer a:hover {
 .flow-arrow {
     font-size: 2.5rem;
     line-height: 1;
-    color: var(--primary-color);
+    color: var(--accent-text);
     transform: translateY(20px);
     transition: all 0.3s ease;
 }
@@ -1652,7 +1661,7 @@ img[alt] {
     position: absolute;
     top: -40px;
     left: 6px;
-    background: #D4A629;
+    background: var(--accent-solid);
     color: white;
     padding: 8px;
     text-decoration: none;
@@ -1753,9 +1762,9 @@ select:focus {
 }
 
 .btn-primary {
-    background: #D4A629;
+    background: var(--accent-solid);
     color: white;
-    border: 2px solid #D4A629;
+    border: 2px solid var(--accent-text);
     padding: 0.75rem 1.5rem;
     border-radius: 4px;
     font-weight: 600;
@@ -1798,7 +1807,7 @@ select:focus {
 }
 
 .form-note a {
-    color: #D4A629;
+    color: var(--accent-text);
     font-weight: 600;
 }
 
@@ -1834,7 +1843,7 @@ select:focus {
 }
 
 .contact-method h3 {
-    color: #D4A629;
+    color: var(--accent-text);
     margin-bottom: 1rem;
     font-size: 1.125rem;
     font-weight: 700;
@@ -1843,14 +1852,14 @@ select:focus {
 }
 
 .contact-method a {
-    color: #D4A629;
+    color: var(--accent-text);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease;
 }
 
 .contact-method a:hover {
-    color: #E4C258;
+    color: var(--accent-text);
     text-decoration: underline;
 }
 
@@ -1939,7 +1948,7 @@ select:focus {
 .stat-number {
     font-size: 4rem;
     font-weight: 900;
-    color: var(--primary-color);
+    color: var(--accent-text);
     line-height: 1;
 }
 
@@ -1975,7 +1984,7 @@ select:focus {
 
 .migration-step.current {
     background: linear-gradient(135deg, var(--highlight-color), #fbbf24);
-    color: var(--secondary-color);
+    color: var(--accent-text);
     font-weight: bold;
 }
 
@@ -2167,7 +2176,7 @@ select:focus {
     text-align: center;
     font-size: 1.2rem;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--accent-text);
     background: white;
     padding: 1rem;
     border-radius: 50px;
@@ -2176,7 +2185,7 @@ select:focus {
 
 .evolution-content h3 {
     margin-bottom: 1rem;
-    color: var(--secondary-color);
+    color: var(--accent-text);
 }
 
 .tech-breakthrough {
@@ -2211,7 +2220,7 @@ select:focus {
     margin-bottom: 0.75rem;
     font-size: 1.125rem;
     font-weight: 700;
-    color: #D4A629;
+    color: var(--accent-text);
     position: relative;
     z-index: 1;
 }
@@ -2268,7 +2277,7 @@ select:focus {
 
 .discovery-card h4 {
     margin-bottom: 1rem;
-    color: #D4A629;
+    color: var(--accent-text);
     font-size: 1.125rem;
     font-weight: 700;
     position: relative;
@@ -2282,7 +2291,7 @@ select:focus {
 }
 
 .discovery-card p strong {
-    color: #CD7F32;
+    color: var(--accent-text);
 }
 
 .method-explanation {
@@ -2290,7 +2299,7 @@ select:focus {
 }
 
 .method-card {
-    background: linear-gradient(to bottom right, rgba(228, 194, 88, 0.03), rgba(95, 169, 142, 0.06));
+    background: linear-gradient(to bottom right, rgba(228, 194, 88, 0.03), rgba(226, 163, 107, 0.06));
     padding: 2rem 1.5rem;
     border-radius: 4px;
     border: 1px solid rgba(228, 194, 88, 0.15);
@@ -2311,7 +2320,7 @@ select:focus {
 
 .method-card h4 {
     margin-bottom: 0.75rem;
-    color: #E4C258;
+    color: var(--accent-text);
     font-weight: 700;
     font-size: 1.125rem;
     position: relative;
@@ -2328,10 +2337,10 @@ select:focus {
 }
 
 .haplogroup-type {
-    background: linear-gradient(to bottom right, rgba(95, 169, 142, 0.03), rgba(47, 127, 165, 0.06));
+    background: linear-gradient(to bottom right, rgba(226, 163, 107, 0.03), rgba(205, 127, 50, 0.06));
     padding: 2rem 1.5rem;
     border-radius: 4px;
-    border: 1px solid rgba(95, 169, 142, 0.15);
+    border: 1px solid rgba(226, 163, 107, 0.15);
     position: relative;
     overflow: hidden;
 }
@@ -2343,12 +2352,12 @@ select:focus {
     right: 0;
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, rgba(95, 169, 142, 0.08), transparent);
+    background: linear-gradient(135deg, rgba(226, 163, 107, 0.08), transparent);
     border-radius: 0 0 0 100%;
 }
 
 .haplogroup-type h4 {
-    color: #5FA98E;
+    color: var(--accent-text);
     font-weight: 700;
     margin-bottom: 0.75rem;
     font-size: 1.125rem;
@@ -2377,7 +2386,7 @@ select:focus {
 
 .haplogroup-type h4 {
     margin-bottom: 1rem;
-    color: var(--secondary-color);
+    color: var(--accent-text);
     font-size: 1.3rem;
 }
 
@@ -2427,7 +2436,7 @@ select:focus {
     width: 100px;
     text-align: center;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--accent-text);
     background: linear-gradient(135deg, var(--highlight-color), #fbbf24);
     padding: 0.5rem;
     border-radius: 20px;
@@ -2436,7 +2445,7 @@ select:focus {
 
 .migration-content h4 {
     margin-bottom: 1rem;
-    color: var(--secondary-color);
+    color: var(--accent-text);
 }
 
 .migration-content p {
@@ -2444,7 +2453,7 @@ select:focus {
 }
 
 .migration-content p strong {
-    color: var(--primary-color);
+    color: var(--accent-text);
 }
 
 .dating-methods {
@@ -2462,7 +2471,7 @@ select:focus {
 
 .method-detailed h4 {
     margin-bottom: 1rem;
-    color: var(--secondary-color);
+    color: var(--accent-text);
     font-size: 1.3rem;
 }
 
@@ -2475,7 +2484,7 @@ select:focus {
 }
 
 .formula-box p strong {
-    color: var(--secondary-color);
+    color: var(--accent-text);
 }
 
 .case-study {
@@ -2521,7 +2530,7 @@ select:focus {
 
 .future-card h4 {
     margin-bottom: 1rem;
-    color: var(--secondary-color);
+    color: var(--accent-text);
     font-size: 1.2rem;
 }
 
@@ -2565,7 +2574,7 @@ select:focus {
 
 .impact-point h4 {
     margin-bottom: 1rem;
-    color: var(--secondary-color);
+    color: var(--accent-text);
 }
 
 .chart-container {
@@ -2701,7 +2710,7 @@ select:focus {
     width: 120px;
     text-align: center;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--accent-text);
     background: linear-gradient(135deg, var(--highlight-color), #fbbf24);
     padding: 0.75rem;
     border-radius: 20px;
@@ -2720,7 +2729,7 @@ select:focus {
 
 .period-content h3 {
     margin-bottom: 1rem;
-    color: var(--secondary-color);
+    color: var(--accent-text);
 }
 
 .period-content ul {
@@ -2737,7 +2746,7 @@ select:focus {
 
 .period-content li::before {
     content: '•';
-    color: var(--primary-color);
+    color: var(--accent-text);
     position: absolute;
     left: 0;
 }
@@ -2800,7 +2809,7 @@ select:focus {
 
 .feature-card h4 {
     margin-bottom: 0.5rem;
-    color: var(--secondary-color);
+    color: var(--accent-text);
 }
 
 .language-examples {
@@ -2825,13 +2834,13 @@ select:focus {
 .expression-card .tachelhit {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--accent-text);
     margin-bottom: 0.5rem;
 }
 
 .expression-card .transliteration {
     font-style: italic;
-    color: var(--secondary-color);
+    color: var(--accent-text);
     margin-bottom: 0.5rem;
 }
 
@@ -2858,7 +2867,7 @@ select:focus {
 
 .governance-card h4 {
     margin-bottom: 1rem;
-    color: var(--secondary-color);
+    color: var(--accent-text);
 }
 
 .governance-card ul {
@@ -2901,7 +2910,7 @@ select:focus {
 
 .ceremony-card h4 {
     margin-bottom: 1rem;
-    color: var(--secondary-color);
+    color: var(--accent-text);
 }
 
 .ceremony-card ul {
@@ -2934,7 +2943,7 @@ select:focus {
 
 .influence-period h3 {
     margin-bottom: 1.5rem;
-    color: var(--secondary-color);
+    color: var(--accent-text);
     border-bottom: 3px solid var(--primary-color);
     padding-bottom: 0.5rem;
 }
@@ -2956,7 +2965,7 @@ select:focus {
 
 .influence-aspect h4 {
     margin-bottom: 1rem;
-    color: var(--secondary-color);
+    color: var(--accent-text);
 }
 
 .influence-aspect ul {
@@ -2972,7 +2981,7 @@ select:focus {
 
 .influence-aspect li::before {
     content: '→';
-    color: var(--primary-color);
+    color: var(--accent-text);
     position: absolute;
     left: 0;
     font-weight: bold;
@@ -3009,7 +3018,7 @@ select:focus {
 
 .food-category h4 {
     margin-bottom: 1rem;
-    color: var(--secondary-color);
+    color: var(--accent-text);
     font-size: 1.3rem;
 }
 
@@ -3028,7 +3037,7 @@ select:focus {
 
 .food-item h5 {
     margin-bottom: 0.5rem;
-    color: var(--primary-color);
+    color: var(--accent-text);
     font-weight: bold;
 }
 
@@ -3053,7 +3062,7 @@ select:focus {
 
 .fusion-card h4 {
     margin-bottom: 1rem;
-    color: var(--secondary-color);
+    color: var(--accent-text);
 }
 
 .fusion-card ul {
@@ -3103,7 +3112,7 @@ select:focus {
 
 .aspect-card h4 {
     margin-bottom: 1.5rem;
-    color: var(--secondary-color);
+    color: var(--accent-text);
 }
 
 .challenge-solution {
@@ -3178,7 +3187,7 @@ select:focus {
 
 .continuity-card h4 {
     margin-bottom: 1rem;
-    color: var(--secondary-color);
+    color: var(--accent-text);
 }
 
 /* Responsive Design for Culture Page */
@@ -3251,13 +3260,13 @@ select:focus {
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, var(--genetic-helix), var(--accent-emerald));
+    background: linear-gradient(90deg, var(--accent-solid), var(--accent-warm-sand));
 }
 
 .discovery-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-xl);
-    border-color: var(--genetic-helix);
+    border-color: var(--accent-text);
 }
 
 .discovery-card h4 {
@@ -3299,7 +3308,7 @@ select:focus {
 .tech-card:hover,
 .method-card:hover {
     box-shadow: var(--shadow-lg);
-    border-color: var(--accent-teal);
+    border-color: var(--accent-text);
 }
 
 .tech-card h4,
@@ -3343,7 +3352,7 @@ select:focus {
 }
 
 .evolution-step:hover {
-    border-left-color: var(--accent-teal);
+    border-left-color: var(--accent-text);
     box-shadow: var(--shadow-lg);
     transform: translateX(5px);
 }
@@ -3352,7 +3361,7 @@ select:focus {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-blue);
+    color: var(--primary-dark);
     margin-bottom: 1rem;
 }
 
@@ -3419,7 +3428,7 @@ select:focus {
     top: 0;
     bottom: 0;
     width: 4px;
-    background: linear-gradient(180deg, var(--accent-teal), var(--accent-emerald));
+    background: linear-gradient(180deg, var(--primary-terracotta), var(--accent-warm-sand));
 }
 
 .migration-event:hover {
@@ -3431,7 +3440,7 @@ select:focus {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--primary-blue);
+    color: var(--primary-dark);
     min-width: 140px;
     flex-shrink: 0;
 }
@@ -3513,7 +3522,7 @@ select:focus {
     top: 0;
     bottom: 0;
     width: 5px;
-    background: linear-gradient(180deg, var(--accent-amber), var(--accent-emerald));
+    background: linear-gradient(180deg, var(--accent-amber), var(--accent-warm-sand));
     border-radius: var(--radius-lg) 0 0 var(--radius-lg);
 }
 
@@ -3632,7 +3641,7 @@ select:focus {
     transform: translate(-50%, -50%);
     background: var(--background);
     padding: 0 1rem;
-    color: var(--primary-blue);
+    color: var(--primary-dark);
     font-size: 0.8rem;
 }
 
@@ -3643,7 +3652,7 @@ select:focus {
     position: absolute;
     width: 20px;
     height: 20px;
-    border: 2px solid var(--accent-teal);
+    border: 2px solid var(--primary-terracotta);
 }
 
 .card-decorated::before {
@@ -3665,7 +3674,7 @@ select:focus {
 /* Accent panels */
 .accent-panel {
     background: linear-gradient(135deg, 
-        rgba(37, 99, 235, 0.05) 0%, 
+        rgba(205, 127, 50, 0.05) 0%, 
         rgba(6, 182, 212, 0.05) 100%
     );
     border-left: none;
@@ -3674,13 +3683,6 @@ select:focus {
     margin: 2rem 0;
 }
 
-.accent-panel-emerald {
-    background: linear-gradient(135deg, 
-        rgba(16, 185, 129, 0.05) 0%, 
-        rgba(6, 182, 212, 0.05) 100%
-    );
-    border-left-color: var(--accent-emerald);
-}
 
 .accent-panel-amber {
     background: linear-gradient(135deg, 
@@ -3708,7 +3710,7 @@ select:focus {
     top: -20px;
     left: 20px;
     font-size: 4rem;
-    color: var(--accent-teal);
+    color: var(--accent-text);
     opacity: 0.2;
     font-family: Georgia, serif;
     line-height: 1;
@@ -3718,7 +3720,7 @@ select:focus {
 .badge {
     display: inline-block;
     padding: 0.35rem 0.85rem;
-    background: linear-gradient(135deg, var(--primary-blue), var(--accent-teal));
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-terracotta));
     color: white;
     border-radius: 50px;
     font-size: 0.85rem;
@@ -3729,13 +3731,10 @@ select:focus {
 
 .badge-outline {
     background: transparent;
-    border: 2px solid var(--primary-blue);
-    color: var(--primary-blue);
+    border: 2px solid var(--primary-dark);
+    color: var(--primary-dark);
 }
 
-.badge-emerald {
-    background: linear-gradient(135deg, var(--accent-emerald), var(--accent-cyan));
-}
 
 .badge-amber {
     background: linear-gradient(135deg, var(--accent-amber), #FCD34D);
@@ -3750,10 +3749,6 @@ select:focus {
     border: 1px solid var(--border);
 }
 
-.info-box-blue {
-    background: rgba(37, 99, 235, 0.05);
-    border-color: rgba(37, 99, 235, 0.2);
-}
 
 .info-box-green {
     background: rgba(16, 185, 129, 0.05);
@@ -3798,7 +3793,7 @@ select:focus {
     display: inline-block;
     padding: 0.5rem 1rem;
     background: var(--background);
-    color: var(--primary-blue);
+    color: var(--primary-dark);
     font-size: 1.5rem;
 }
 
@@ -3900,7 +3895,7 @@ select:focus {
 
 .section-kicker {
     font-size: 0.75rem;
-    color: #E4C258;
+    color: var(--accent-text);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 600;
@@ -3920,7 +3915,7 @@ select:focus {
 }
 
 .research-intro-gradient {
-    color: #D4A629;
+    color: var(--accent-text);
 }
 
 .research-intro-copy {
@@ -3952,7 +3947,7 @@ select:focus {
 .research-filter-btn {
     border: 1px solid rgba(212, 166, 41, 0.35);
     background: #fff;
-    color: #CD7F32;
+    color: var(--accent-text);
     font-size: 0.82rem;
     font-weight: 600;
     padding: 0.45rem 0.8rem;
@@ -3979,7 +3974,7 @@ select:focus {
     gap: 0.6rem;
     font-size: 0.82rem;
     font-weight: 600;
-    color: #CD7F32;
+    color: var(--accent-text);
 }
 
 .research-sort-select {
@@ -4018,7 +4013,7 @@ select:focus {
 }
 
 .discovery-card-clay {
-    border-top: 3px solid #5FA98E;
+    border-top: 3px solid #CD7F32;
 }
 
 .discovery-card-sienna {
@@ -4052,22 +4047,22 @@ select:focus {
 
 .discovery-tag-copper {
     background: rgba(212, 166, 41, 0.12);
-    color: #D4A629;
+    color: var(--accent-text);
 }
 
 .discovery-tag-ochre {
     background: rgba(228, 194, 88, 0.12);
-    color: #E4C258;
+    color: var(--accent-text);
 }
 
 .discovery-tag-clay {
-    background: rgba(95, 169, 142, 0.12);
-    color: #5FA98E;
+    background: rgba(226, 163, 107, 0.12);
+    color: var(--accent-text);
 }
 
 .discovery-tag-sienna {
-    background: rgba(47, 127, 165, 0.12);
-    color: #CD7F32;
+    background: rgba(205, 127, 50, 0.12);
+    color: var(--accent-text);
 }
 
 .discovery-date {
@@ -4103,19 +4098,19 @@ select:focus {
 }
 
 .text-copper {
-    color: #D4A629;
+    color: var(--accent-text);
 }
 
 .text-ochre {
-    color: #E4C258;
+    color: var(--accent-text);
 }
 
 .text-clay {
-    color: #5FA98E;
+    color: var(--accent-text);
 }
 
 .text-sienna {
-    color: #CD7F32;
+    color: var(--accent-text);
 }
 
 .research-context-card {
@@ -4137,7 +4132,7 @@ select:focus {
 .start-here-intro-card {
     margin-bottom: 2rem;
     border-top: 3px solid transparent;
-    border-image: linear-gradient(90deg, #D4A629 0%, #E4C258 50%, #5FA98E 100%) 1;
+    border-image: linear-gradient(90deg, #D4A629 0%, #E4C258 50%, #CD7F32 100%) 1;
 }
 
 .start-path-grid {
@@ -4162,7 +4157,7 @@ select:focus {
 }
 
 .start-path-clay {
-    border-top: 3px solid #5FA98E;
+    border-top: 3px solid #CD7F32;
 }
 
 .start-path-head {
@@ -4177,9 +4172,9 @@ select:focus {
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #CD7F32;
-    background: rgba(47, 127, 165, 0.08);
-    border: 1px solid rgba(47, 127, 165, 0.16);
+    color: var(--accent-text);
+    background: rgba(205, 127, 50, 0.08);
+    border: 1px solid rgba(205, 127, 50, 0.16);
     padding: 0.25rem 0.65rem;
     border-radius: 3px;
 }
@@ -4210,18 +4205,18 @@ select:focus {
 .start-path-list a {
     color: inherit;
     text-decoration: underline;
-    text-decoration-color: rgba(47, 127, 165, 0.35);
+    text-decoration-color: rgba(205, 127, 50, 0.35);
     text-underline-offset: 2px;
 }
 
 .start-path-list a:hover {
-    color: #CD7F32;
+    color: var(--accent-text);
 }
 
 .glossary-intro-card {
     margin-bottom: 2rem;
     border-top: 3px solid transparent;
-    border-image: linear-gradient(90deg, #D4A629 0%, #E4C258 50%, #5FA98E 100%) 1;
+    border-image: linear-gradient(90deg, #D4A629 0%, #E4C258 50%, #CD7F32 100%) 1;
 }
 
 .glossary-grid {
@@ -4363,7 +4358,7 @@ main#main-content.has-reading-aids {
     z-index: 2100;
     border: 1px solid rgba(212, 166, 41, 0.5);
     background: #fff;
-    color: #CD7F32;
+    color: var(--accent-text);
     font-size: 0.8rem;
     font-weight: 600;
     border-radius: 999px;
@@ -4400,14 +4395,27 @@ main#main-content.has-reading-aids {
     }
 }
 
-@media (max-width: 640px) {
+/* Below the tablet breakpoint the TOC becomes a vertical list. It used to be a
+   horizontal scroller with the scrollbar hidden, so every entry past the second
+   was invisible and undiscoverable on a phone (issue #34). */
+@media (max-width: 767px) {
     .toc-list {
-        overflow-x: auto;
+        flex-direction: column;
         flex-wrap: nowrap;
-        scrollbar-width: none;
+        overflow-x: visible;
     }
-    .toc-list::-webkit-scrollbar {
-        display: none;
+
+    .toc-list li {
+        width: 100%;
+    }
+
+    .toc-list a {
+        width: 100%;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        white-space: normal;      /* long section titles must wrap, not overflow */
+        overflow-wrap: anywhere;
     }
 }
 
@@ -4542,27 +4550,27 @@ main#main-content.has-reading-aids {
 
 .paper-badge-copper {
     background: rgba(212, 166, 41, 0.12);
-    color: #D4A629;
+    color: var(--accent-text);
 }
 
 .paper-badge-ochre {
     background: rgba(228, 194, 88, 0.12);
-    color: #E4C258;
+    color: var(--accent-text);
 }
 
 .paper-badge-clay {
-    background: rgba(95, 169, 142, 0.12);
-    color: #5FA98E;
+    background: rgba(226, 163, 107, 0.12);
+    color: var(--accent-text);
 }
 
 .paper-badge-sienna {
-    background: rgba(47, 127, 165, 0.12);
-    color: #CD7F32;
+    background: rgba(205, 127, 50, 0.12);
+    color: var(--accent-text);
 }
 
 .paper-badge-journal {
-    background: rgba(47, 127, 165, 0.1);
-    color: #CD7F32;
+    background: rgba(205, 127, 50, 0.1);
+    color: var(--accent-text);
 }
 
 .paper-date {
@@ -4605,22 +4613,22 @@ main#main-content.has-reading-aids {
 }
 
 .paper-doi-copper {
-    color: #D4A629;
+    color: var(--accent-text);
     border: 1px solid #D4A629;
 }
 
 .paper-doi-ochre {
-    color: #E4C258;
+    color: var(--accent-text);
     border: 1px solid #E4C258;
 }
 
 .paper-doi-clay {
-    color: #5FA98E;
-    border: 1px solid #5FA98E;
+    color: var(--accent-text);
+    border: 1px solid #CD7F32;
 }
 
 .paper-doi-sienna {
-    color: #CD7F32;
+    color: var(--accent-text);
     border: 1px solid #CD7F32;
 }
 
@@ -4629,7 +4637,7 @@ main#main-content.has-reading-aids {
 }
 
 .paper-card-clay {
-    border-top: 3px solid #5FA98E;
+    border-top: 3px solid #CD7F32;
 }
 
 .takeaways-copper {
@@ -4643,13 +4651,13 @@ main#main-content.has-reading-aids {
 }
 
 .takeaways-clay {
-    border-left: 3px solid #5FA98E;
-    background: linear-gradient(to right, rgba(95, 169, 142, 0.04), transparent);
+    border-left: 3px solid #CD7F32;
+    background: linear-gradient(to right, rgba(226, 163, 107, 0.04), transparent);
 }
 
 .takeaways-sienna {
     border-left: 3px solid #CD7F32;
-    background: linear-gradient(to right, rgba(47, 127, 165, 0.04), transparent);
+    background: linear-gradient(to right, rgba(205, 127, 50, 0.04), transparent);
 }
 
 .takeaways-list {
@@ -4685,11 +4693,11 @@ main#main-content.has-reading-aids {
 }
 
 .article-back-copper {
-    color: #D4A629;
+    color: var(--accent-text);
 }
 
 .article-back-sienna {
-    color: #CD7F32;
+    color: var(--accent-text);
 }
 
 .article-nav-actions {
@@ -4703,13 +4711,13 @@ main#main-content.has-reading-aids {
 }
 
 .btn-outline-copper {
-    border-color: #D4A629;
-    color: #D4A629;
+    border-color: var(--accent-text);
+    color: var(--accent-text);
 }
 
 .btn-outline-ochre {
     border-color: #E4C258;
-    color: #E4C258;
+    color: var(--accent-text);
 }
 
 /* ========================================
@@ -4739,7 +4747,7 @@ main#main-content.has-reading-aids {
 
 .home-hero-kicker {
     font-size: 0.75rem;
-    color: #E4C258;
+    color: var(--accent-text);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 600;
@@ -4760,7 +4768,7 @@ main#main-content.has-reading-aids {
 }
 
 .home-hero-accent {
-    color: #D4A629;
+    color: var(--accent-text);
 }
 
 .home-hero-copy {
@@ -4874,7 +4882,7 @@ main#main-content.has-reading-aids {
 .home-map-kicker {
     display: inline-block;
     font-size: 0.72rem;
-    color: #CD7F32;
+    color: var(--accent-text);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     font-weight: 700;
@@ -4923,7 +4931,7 @@ main#main-content.has-reading-aids {
 
 .btn-outline-sienna {
     border-color: #CD7F32;
-    color: #CD7F32;
+    color: var(--accent-text);
 }
 .mt-2 { margin-top: 1rem; }
 .mt-3 { margin-top: 1.5rem; }
@@ -4941,7 +4949,7 @@ main#main-content.has-reading-aids {
 
 .text-primary { color: var(--text-primary); }
 .text-secondary { color: var(--text-secondary); }
-.text-terracotta { color: var(--primary-terracotta); }
+.text-terracotta { color: var(--accent-text); }
 
 .font-bold { font-weight: 700; }
 .font-semibold { font-weight: 600; }
@@ -5043,15 +5051,6 @@ main#main-content.has-reading-aids {
    2026 UX POLISH LAYER
    ======================================== */
 
-:root {
-    /* Backfill legacy tokens used throughout older sections */
-    --primary-blue: #2C4251;
-    --accent-cyan: #2C7A7B;
-    --accent-teal: #2A9D8F;
-    --accent-emerald: #2F855A;
-    --highlight-color: #F2BE6F;
-    --genetic-helix: #386FA4;
-}
 
 body {
     background: #F7F8FA;
@@ -5063,11 +5062,11 @@ body {
 
 .nav-container a:hover {
     background: #F4F0E8;
-    border-color: rgba(44, 66, 81, 0.12);
+    border-color: rgba(62, 39, 35, 0.12);
 }
 
 .nav-container a.active {
-    background: #D4A629;
+    background: var(--accent-solid);
     color: #FFFFFF;
     box-shadow: 0 8px 16px rgba(212, 166, 41, 0.24);
 }
@@ -5077,13 +5076,13 @@ body {
     color: var(--text-secondary);
 }
 
-.card a {
-    color: #CD7F32;
+.card a:not(.btn):not([class*="btn-"]) {
+    color: var(--accent-text);
     text-decoration-thickness: 1.5px;
     text-underline-offset: 2px;
 }
 
-.card a:hover {
+.card a:not(.btn):not([class*="btn-"]):hover {
     color: #6A3410;
 }
 
@@ -5124,7 +5123,7 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-    outline: 3px solid rgba(44, 66, 81, 0.45);
+    outline: 3px solid rgba(62, 39, 35, 0.45);
     outline-offset: 2px;
 }
 
@@ -5193,7 +5192,7 @@ select:focus-visible {
 
 .home-section-kicker {
     font-size: 0.72rem;
-    color: var(--primary-terracotta);
+    color: var(--accent-text);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 600;
@@ -5213,7 +5212,7 @@ select:focus-visible {
 }
 
 .home-section-title a:hover {
-    color: var(--primary-terracotta);
+    color: var(--accent-text);
 }
 
 .home-section-copy {
@@ -5233,5 +5232,51 @@ select:focus-visible {
 @media (max-width: 768px) {
     .home-section-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Timeline era headings — real <h3> rank, sized by class rather than an
+   inline font-size that faked an <h4> (issue #35). */
+.timeline-era-title {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+/* Five-era timeline. `repeat(5, 1fr)` cannot shrink below the min-content width
+   of the era labels, so on a phone the grid pushed the whole page sideways.
+   minmax(0, 1fr) lets the tracks shrink; below the tablet breakpoint it stacks. */
+.era-timeline {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.5rem;
+    position: relative;
+}
+
+@media (max-width: 900px) {
+    .era-timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .era-timeline {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* Same min-content overflow trap as .era-timeline, three columns. */
+.era-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+@media (max-width: 767px) {
+    .era-grid-3 {
+        grid-template-columns: minmax(0, 1fr);
     }
 }
