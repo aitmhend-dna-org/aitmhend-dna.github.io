@@ -5358,3 +5358,28 @@ select:focus-visible {
    paragraph/heading margins double the spacing and leave dead air. */
 .home-section-card > * { margin-top: 0; margin-bottom: 0; }
 .home-section-card .home-section-cta { margin-top: 0.35rem; align-self: start; }
+
+/* #48 — visible revision date. Deliberately "Last updated", not "reviewed":
+   it reflects the file's last change, which is a fact, rather than asserting
+   that a human re-checked the content. */
+.page-updated {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+    margin: 0 0 1.5rem;
+}
+
+/* #47 — sourcing note for content drawn from community knowledge rather than
+   published literature. Set apart so it reads as a statement about the
+   evidence, not as body copy. */
+.sourcing-note {
+    border-left: 3px solid var(--primary-terracotta);
+    background: rgba(244, 236, 220, 0.35);
+    padding: 1rem 1.25rem;
+    margin: 0 0 2rem;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.sourcing-note strong { color: var(--text-primary); }
