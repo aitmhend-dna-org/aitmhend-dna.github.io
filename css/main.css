@@ -101,6 +101,10 @@ h1, h2, h3, h4 {
     line-height: 1.02;
     letter-spacing: -0.03em;
     text-wrap: balance;
+    /* A single long word at display size is wider than a 320px container —
+       "Microgeographical" at 40px overflowed a real page. Display type must be
+       allowed to break, or the whole document scrolls sideways on a phone. */
+    overflow-wrap: break-word;
     margin: 0 0 0.5em;
 }
 
