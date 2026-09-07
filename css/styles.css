@@ -933,22 +933,40 @@ img {
     color: var(--accent-text);
 }
 
-/* Skip to main content */
-.skip-to-main {
+/* Skip to main content — the single source of truth for both class names
+   used across the site (.skip-to-main on most pages, .skip-link under research/).
+   Visually hidden until it receives keyboard focus: no offsets to get wrong, so
+   it can never peek back onto the page the way a negative `top` does. */
+.skip-to-main,
+.skip-link {
     position: absolute;
-    left: -9999px;
-    z-index: 999;
-    padding: 1rem;
-    background: var(--primary-dark);
-    color: white;
-    text-decoration: none;
-    border-radius: var(--radius-md);
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
 }
 
-.skip-to-main:focus {
+.skip-to-main:focus,
+.skip-link:focus {
+    top: 1rem;
     left: 50%;
     transform: translateX(-50%);
-    top: 1rem;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    clip-path: none;
+    padding: 1rem;
+    background: var(--accent-solid);
+    color: #fff;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    z-index: 1000;
 }
 
 /* ========================================
@@ -1568,42 +1586,6 @@ footer a:hover {
 img[alt] {
     max-width: 100%;
     height: auto;
-}
-
-/* Skip to main content link for accessibility */
-.skip-to-main {
-    position: absolute;
-    top: -40px;
-    left: 6px;
-    background: var(--primary-color);
-    color: white;
-    padding: 8px;
-    text-decoration: none;
-    border-radius: 4px;
-    z-index: 1000;
-    transition: top 0.3s ease;
-}
-
-.skip-to-main:focus {
-    top: 6px;
-}
-
-/* Skip link - alternate class name for same functionality */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 6px;
-    background: var(--accent-solid);
-    color: white;
-    padding: 8px;
-    text-decoration: none;
-    border-radius: 4px;
-    z-index: 1000;
-    transition: top 0.3s ease;
-}
-
-.skip-link:focus {
-    top: 6px;
 }
 
 /* Enhanced focus indicators for accessibility */

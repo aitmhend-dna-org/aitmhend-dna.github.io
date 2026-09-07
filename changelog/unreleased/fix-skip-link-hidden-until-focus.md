@@ -1,0 +1,2 @@
+### Fixed
+- The "Skip to main content" link no longer shows as a brown sliver in the top-left corner of every page. `.skip-to-main` was declared twice in `css/styles.css`; the second declaration replaced the working off-screen offset with `top: -40px`, which the link's own height out-ran. Both declarations, and the separate `.skip-link` class used by the research articles, are now one rule that hides the link with the clip-based visually-hidden pattern and reveals it in a single consistent position on keyboard focus (#75)
