@@ -187,7 +187,9 @@ Only these exist. Do not invent variants without adding them here.
 - `.stat` — a big display number with a small label. Numbers are the loudest type on the site.
 - `.btn` — square, solid, min-height 48px. `.btn--ghost` is the outline variant.
 - `.door` — the large tappable entry blocks (DNA / Land / Language).
-- `.figure` — an authored SVG diagram with a caption. Never a photograph.
+- `.figure` — an authored SVG diagram with a caption. Never a photograph. Inside a colour
+  band the caption switches to `--on-colour`; a dimmed white is not an option, because it
+  fails 4.5:1 against `--yaz`.
 - `.note` — the honesty callout: what the evidence does not support.
 - `.page-title`, `.page-updated`, `.sourcing-note`.
 
