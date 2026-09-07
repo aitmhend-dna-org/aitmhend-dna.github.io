@@ -111,6 +111,8 @@ what is a precise identifier is Plex Mono.** Do not blur that.
   must be inside an element that resolves to that family. The Google Fonts request is
   subset with `&text=` so it costs well under 5 KB.
 - Body: 17px / 1.65, `max-width: 68ch` on running prose.
+- Display headings carry `overflow-wrap: break-word`. One long word at 40px is wider than a
+  320px container and takes the whole page sideways with it.
 - Display headings use `text-wrap: balance` and negative tracking (`-0.03em` and tighter
   as size grows). At poster sizes, default tracking looks loose and accidental.
 - Display type is set in sentence case, not all-caps, except kickers and stat labels,
