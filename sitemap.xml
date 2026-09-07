@@ -19,7 +19,7 @@
   <!-- Start Here Page -->
   <url>
     <loc>https://northafricanorigins.com/start-here.html</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -32,7 +32,7 @@
   <!-- Glossary Page -->
   <url>
     <loc>https://northafricanorigins.com/glossary.html</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -63,7 +63,7 @@
   <!-- Genetics Revolution Page -->
   <url>
     <loc>https://northafricanorigins.com/genetics.html</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -76,7 +76,7 @@
   <!-- Cultural Heritage Page -->
   <url>
     <loc>https://northafricanorigins.com/culture.html</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -89,7 +89,7 @@
   <!-- Research Blog Page -->
   <url>
     <loc>https://northafricanorigins.com/research.html</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -176,7 +176,7 @@
   <!-- Maps & Sites Page -->
   <url>
     <loc>https://northafricanorigins.com/maps-sites.html</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -184,14 +184,14 @@
   <!-- Contact Page -->
   <url>
     <loc>https://northafricanorigins.com/contact.html</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://northafricanorigins.com/limitations.html</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
