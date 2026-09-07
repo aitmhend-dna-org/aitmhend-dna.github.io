@@ -1123,3 +1123,112 @@ select:focus-visible {
 .band--ink .figure__caption b {
     color: var(--on-colour);
 }
+
+/* --------------------------------------------------------------------------
+   21. Language switcher
+   -------------------------------------------------------------------------- */
+
+.langs {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.langs a {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0.35rem 0.7rem;
+    font-family: var(--font-mono);
+    font-size: var(--t-xs);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink);
+    background: var(--paper-sunk);
+}
+
+.langs a:hover { background: var(--ink); color: var(--paper); }
+
+.langs a[aria-current="true"] {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+/* --------------------------------------------------------------------------
+   22. Right-to-left
+   Arabic is not a translation problem, it is a direction problem: this system
+   encodes meaning in left/right (the stripe, the two-lineage diagram, the
+   timeline's label sides), so those have to be mirrored, not just reversed.
+   -------------------------------------------------------------------------- */
+
+[dir="rtl"] .stripe { transform: scaleX(-1); }
+
+[dir="rtl"] .note {
+    border-left: 0;
+    border-right: 8px solid var(--sand);
+}
+
+[dir="rtl"] .era__when,
+[dir="rtl"] .paper__year { text-align: right; }
+
+/* Diagrams are NOT CSS-mirrored — an RTL diagram is authored with mirrored
+   geometry in its own source. But `direction: rtl` inherits into the SVG and
+   INVERTS text-anchor: `start` then anchors to the right and `end` to the left,
+   so every label runs off-canvas and is silently clipped. Pin the SVG to ltr so
+   the authored coordinates mean what they say, and let each label pick its own
+   text direction from its content. */
+[dir="rtl"] .figure__frame svg { direction: ltr; }
+[dir="rtl"] .figure__frame svg text { unicode-bidi: plaintext; }
+
+/* Latin identifiers inside RTL text: haplogroups, DOIs and dates must not be
+   re-ordered by the bidi algorithm. */
+[dir="rtl"] .hg,
+[dir="rtl"] .paper__meta,
+[dir="rtl"] .page-updated {
+    direction: ltr;
+    unicode-bidi: isolate;
+    display: inline-block;
+}
+
+[dir="rtl"] .page-updated { display: block; text-align: right; }
+
+/* The Latin display faces have no Arabic coverage, so an RTL page swaps them.
+   Noto Kufi Arabic keeps the geometric poster weight; Noto Sans Arabic reads.
+   Plex Mono stays for haplogroups, which are Latin in every language. */
+[dir="rtl"] {
+    --font-display: "Noto Kufi Arabic", "Bricolage Grotesque", system-ui, sans-serif;
+    --font-body: "Noto Sans Arabic", system-ui, sans-serif;
+}
+
+/* Arabic needs a little more leading and no negative tracking — the letterforms
+   connect, so tightening them damages legibility rather than tidying it. */
+[dir="rtl"] body { line-height: 1.85; }
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4 {
+    letter-spacing: 0;
+    line-height: 1.25;
+}
+
+[dir="rtl"] .stat__num { letter-spacing: 0; }
+
+[dir="rtl"] .kicker,
+[dir="rtl"] .stat__label,
+[dir="rtl"] .door__go {
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+/* Long unbreakable tokens — DOIs, URLs, haplogroup strings — are wider than a
+   280px container. They only surfaced on the Arabic pages, where the Arabic body
+   face renders the Latin run wider, but the hazard is language-independent. */
+p, li, dd, figcaption, .prose, .figure__caption {
+    overflow-wrap: break-word;
+}
