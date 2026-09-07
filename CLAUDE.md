@@ -14,17 +14,17 @@ This is a **no-build static site** — plain HTML, CSS, and vanilla JS. No packa
 
 - **Edit and preview directly** — open any `.html` file in a browser
 - **Deployment** — automatic via GitHub Pages from main branch
-- **External deps (CDN only):** Chart.js, Mermaid, Google Fonts (Literata, Archivo, IBM Plex Mono)
+- **External deps (CDN only):** Google Fonts (Bricolage Grotesque, Instrument Sans, IBM Plex Mono, Noto Sans Tifinagh on migrated pages; Literata and Archivo on legacy pages). Chart.js and Mermaid are used only by pages still on the legacy stylesheet
 - **Contact form:** Formspree (ID: myzbzgjn)
 
 ## Architecture
 
 - `index.html`, `lineage.html`, `genetics.html`, `culture.html`, `research.html`, `contact.html`,
   `start-here.html`, `glossary.html`, `maps-sites.html`, `limitations.html` — the site pages
-- `research/*.html` — nine paper summaries
-- `css/styles.css` — single stylesheet with CSS custom properties in one `:root`
+- `research/*.html` — twelve paper summaries
+- `css/main.css` — the current design system (see `DESIGN.md`). `css/styles.css` is the legacy stylesheet still serving un-migrated pages; it is deleted when the last page moves over. A page loads one or the other, never both
 - `js/reading-aids.js` — TOC rail, reading progress, back-to-top
-- `img/` — WebP imagery (plus `og-card.jpg` for social and `site-logo-mark.png`)
+- `img/` — legacy WebP imagery (plus `og-card.jpg` for social). Migrated pages use authored inline SVG diagrams instead of photographs — see the Imagery section of `DESIGN.md`
 - `docs/` — research notes and SEO documentation
 - Chart.js and Mermaid configs are inline per page; shared behaviour is in `js/reading-aids.js`
 
@@ -46,7 +46,7 @@ stylesheet; that is what #59 resolved. Do not reintroduce a second copy.
 - Date format with context: "~400 BCE (2,400 years before present)"
 - Geographic: "Souss-Massa" (primary), "Souss Valley" (descriptive)
 - Language reference: "Tachelhit" (the specific Amazigh language)
-- Tone: Scholarly yet accessible, data-driven, culturally respectful
+- Tone: written for a curious sixteen-year-old — short sentences, concrete nouns, the finding before the method. The evidence stays scholarly: date ranges, hedging and citations are never cut to shorten a page
 
 ## SEO Checklist (for any page changes)
 
