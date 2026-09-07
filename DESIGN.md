@@ -194,6 +194,26 @@ Only these exist. Do not invent variants without adding them here.
   fails 4.5:1 against `--yaz`.
 - `.note` — the honesty callout: what the evidence does not support.
 - `.page-title`, `.page-updated`, `.sourcing-note`.
+- `.langs` — the language switcher. Page-aware: on a page that has a translation it links to
+  the exact equivalent, elsewhere to that language's home. This is the one part of the chrome
+  that legitimately differs per page, like `aria-current`.
+
+## Right-to-left
+
+Arabic is a direction problem, not only a translation problem. This system encodes meaning in
+left/right — the stripe, the two-lineage diagram (Africa left, Europe right), the timeline's
+label sides — so an RTL page **mirrors** those rather than merely reversing text.
+
+- `dir="rtl"` on `<html>`, with `[dir="rtl"]` rules doing the mirroring.
+- Diagrams are **authored** mirrored, never CSS-flipped. `scaleX(-1)` on the SVG plus a
+  counter-flip on each `<text>` leaves every label anchored the wrong way and silently clips
+  it — a date range loses its second half. Write a second SVG with swapped coordinates and
+  `text-anchor` values.
+- Latin identifiers inside Arabic text — haplogroups, DOIs, dates — need
+  `direction: ltr; unicode-bidi: isolate`, or the bidi algorithm reorders them.
+- Arabic takes **more leading and zero letter-spacing**. The negative tracking that makes the
+  Latin display type work damages Arabic, whose letterforms connect.
+- Western Arabic numerals (0–9), which is Moroccan usage.
 
 ## Imagery
 
