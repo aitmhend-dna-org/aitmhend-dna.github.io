@@ -1,0 +1,109 @@
+# Weekly research scout: finds new peer-reviewed papers on North African population
+# genetics and ancient migrations, has Claude screen and summarise them, and publishes the
+# ones that pass a Crossref fact check. How it works: .github/research-scout/README.md
+name: Research scout
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+  workflow_dispatch:
+    inputs:
+      days:
+        description: Search this many days back
+        default: "28"
+
+permissions:
+  contents: write # push the scout branch and merge it
+  pull-requests: write # open and merge the PR
+  pages: write # request a Pages build after merging
+  id-token: write # claude-code-action's OIDC handshake
+
+concurrency:
+  group: research-scout
+  cancel-in-progress: false
+
+env:
+  # "false" stops at an open PR for a human to read and merge.
+  AUTO_MERGE: "true"
+
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Check for the Claude token
+        id: token
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
+            echo "::notice::CLAUDE_CODE_OAUTH_TOKEN is not set, so the scout is skipping. The repo owner adds it under Settings > Secrets and variables > Actions."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Find candidate papers
+        id: candidates
+        if: steps.token.outputs.ok == 'true'
+        run: python3 .github/research-scout/scout.py candidates --days "${{ inputs.days || '28' }}"
+
+      - name: Screen and summarise with Claude
+        if: steps.candidates.outputs.count > 0
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # Claude never touches git here; the steps below do, with the workflow token.
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Screen this week's candidate papers for northafricanorigins.com.
+            Read .github/research-scout/PROMPT.md first and follow it exactly.
+            The candidates are in .scout/candidates.json. Write only under .scout/.
+          claude_args: |
+            --model claude-opus-5
+            --max-turns 40
+            --allowedTools "Read,Write,Glob,Grep"
+
+      - name: Check Claude wrote nothing outside .scout/
+        if: steps.candidates.outputs.count > 0
+        run: |
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA" || { echo "::error::HEAD moved during the Claude step"; exit 1; }
+          stray=$(git status --porcelain --untracked-files=all | grep -v ' \.scout/' || true)
+          if [ -n "$stray" ]; then echo "::error::Claude changed files outside .scout/:"; echo "$stray"; exit 1; fi
+
+      - name: Build pages from Claude's decisions
+        id: apply
+        if: steps.candidates.outputs.count > 0
+        run: python3 .github/research-scout/scout.py apply
+
+      - name: Validate against Crossref (the merge gate)
+        if: steps.apply.outputs.changed == 'true'
+        run: python3 .github/research-scout/scout.py validate --check-changed
+
+      - name: Open the PR, merge and deploy
+        if: steps.apply.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NEEDS_REVIEW: ${{ steps.apply.outputs.needs_review }}
+        run: |
+          branch="research-scout/$(date -u +%Y-%m-%d)-${GITHUB_RUN_ID}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add -A
+          git commit -F .scout/commit-message.txt
+          git push -u origin "$branch"
+          url=$(gh pr create --base "$GITHUB_REF_NAME" --head "$branch" \
+            --title "$(head -n1 .scout/commit-message.txt)" --body-file .scout/pr-body.md --label content)
+          if [ "$AUTO_MERGE" = "true" ] && [ "$NEEDS_REVIEW" != "true" ]; then
+            gh pr merge "$url" --merge --delete-branch
+            gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds" > /dev/null \
+              || echo "::warning::Pages build request failed; the merge should still deploy"
+            echo "Merged and deploying: $url" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "PR left open for review: $url" >> "$GITHUB_STEP_SUMMARY"
+          fi

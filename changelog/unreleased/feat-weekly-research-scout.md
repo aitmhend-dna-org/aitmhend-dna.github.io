@@ -1,0 +1,2 @@
+### Added
+- A weekly research scout (`.github/workflows/research-scout.yml`). Every Monday it searches Europe PMC for new peer-reviewed papers on North African population genetics and ancient migrations. Claude screens them and summarises at most two from their abstracts, and a script builds the pages. The PR is merged once every DOI, date and journal on the research page matches Crossref. A summary that uses a number not found in the paper's abstract is left as an open PR for a person instead. Details in `.github/research-scout/README.md` (#88)

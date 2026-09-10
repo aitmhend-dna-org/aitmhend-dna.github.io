@@ -26,6 +26,7 @@ This is a **no-build static site** — plain HTML, CSS, and vanilla JS. No packa
 - `js/reading-aids.js` — TOC rail, reading progress, back-to-top
 - `img/` — legacy WebP imagery (plus `og-card.jpg` for social). Migrated pages use authored inline SVG diagrams instead of photographs — see the Imagery section of `DESIGN.md`
 - `docs/` — research notes and SEO documentation
+- `.github/research-scout/` + `.github/workflows/research-scout.yml` — the weekly research scout, which adds new papers to `research.html` and `research/` on its own. Its page template and count-sync logic live in `scout.py`; if you change the article layout or the "All N summaries" wording, change them there too, or `scout.py validate` will fail the next run. See its `README.md`
 - Chart.js and Mermaid configs are inline per page; shared behaviour is in `js/reading-aids.js`
 
 Every page follows the same structure: constant brand `<header>` → sticky `<nav>` → breadcrumb → `<main id="main-content">` carrying the page `<h1>` → shared `<footer>`. Each page includes full SEO markup (Open Graph, Twitter Cards, JSON-LD structured data, canonical URLs, geo-tags).
