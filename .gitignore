@@ -14,5 +14,8 @@ Thumbs.db
 *.bak
 .cache/
 
+# Research scout scratch (candidates, Claude's decisions and prose)
+.scout/
+
 # Documentation (optional - remove if you want to track docs)
 # docs/

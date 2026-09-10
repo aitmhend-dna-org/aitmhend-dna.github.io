@@ -1,0 +1,58 @@
+<main id="main-content">
+
+        <section class="band band--tight">
+            <div class="container">
+                <span class="kicker"><time datetime="{{date_iso}}">{{date_long}}</time> &middot; {{journal}}</span>
+                <h1 class="page-title">{{paper_title}}</h1>
+                <p class="page-updated">{{authors_short}} &middot; <a href="https://doi.org/{{doi}}">doi:{{doi}}</a></p>
+            </div>
+        </section>
+
+        <hr class="stripe">
+
+        <section class="band band--sunk" aria-labelledby="summary">
+            <div class="container">
+                <span class="section-marker" aria-hidden="true">ⵣ</span>
+                <h2 id="summary">What the study found</h2>
+                <div class="prose">
+{{summary}}
+                </div>
+            </div>
+        </section>
+
+        <section class="band" aria-labelledby="takeaways">
+            <div class="container">
+                <span class="section-marker" aria-hidden="true">ⵣ</span>
+                <h2 id="takeaways">Key points</h2>
+                <div class="cols cols--2">
+{{key_points}}
+                </div>
+            </div>
+        </section>
+
+        <section class="band band--ink" aria-labelledby="relevance">
+            <div class="container">
+                <span class="kicker">Why it is here</span>
+                <h2 id="relevance">Relevance to this lineage</h2>
+                <div class="prose">
+{{relevance}}
+                </div>
+            </div>
+        </section>
+
+        <section class="band band--sand band--tight">
+            <div class="container">
+                <div class="note" style="background: transparent; border-left-color: var(--ink)">
+                    <h2 class="mt-0">This is a summary, not the paper</h2>
+                    <p class="mb-0">Written here as an aid to reading, from the paper&rsquo;s published abstract. Where this page and the study disagree, the study is right — <a href="https://doi.org/{{doi}}">read it</a>. Full citation: {{citation}} All {{count_word}} summaries are listed on the <a href="../research.html">research page</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="band band--tight">
+            <div class="container">
+                <p class="page-updated">Last updated: {{updated_long}}</p>
+            </div>
+        </section>
+
+    </main>
