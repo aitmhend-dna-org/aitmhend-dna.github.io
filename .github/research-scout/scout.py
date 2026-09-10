@@ -64,7 +64,7 @@ PLACE = ('("North Africa" OR "North African" OR "Northwest Africa" OR Maghreb OR
 
 # The only files a scout run may change. Anything else fails validation.
 ALLOWED = re.compile(
-    r"^(research\.html|lineage\.html|sitemap\.xml|research/[a-z0-9-]+\.html"
+    r"^(research\.html|lineage\.html|index\.html|start-here\.html|sitemap\.xml|research/[a-z0-9-]+\.html"
     r"|changelog/unreleased/[a-z0-9-]+\.md|\.github/research-scout/screened\.json)$")
 
 # Hard limits on the model's prose. PROMPT.md asks for less; the margin means a run is
@@ -95,6 +95,8 @@ COUNT_PHRASES = {
     "index": [rf"\b({NUM}) papers\b", rf"\bthe ({NUM}) peer-reviewed studies\b"],
     "lineage": [rf"\bAll ({NUM}) papers summarised\b"],
     "article": [rf"\bAll ({NUM}) summaries are listed\b"],
+    "home": [r'<span class="stat__num">(\d+)</span>\s*<span class="stat__label">Peer-reviewed papers'],
+    "start": [rf"\b({NUM}) paper summaries\b"],
 }
 ITEM = re.compile(r'\n[ \t]*<li class="paper">.*?</li>', re.S)
 DOI_LINK = re.compile(r'https://doi\.org/([^"<\s]+)')
@@ -250,19 +252,27 @@ def item_fields(item: str) -> dict:
 def count_targets():
     yield INDEX, COUNT_PHRASES["index"]
     yield ROOT / "lineage.html", COUNT_PHRASES["lineage"]
+    yield ROOT / "index.html", COUNT_PHRASES["home"]
+    yield ROOT / "start-here.html", COUNT_PHRASES["start"]
     for f in sorted((ROOT / "research").glob("*.html")):
         yield f, COUNT_PHRASES["article"]
 
 
 def sync_counts(n: int) -> list[Path]:
     word = number_word(n)
+
+    def spell(found: str) -> str:  # keep the form the page already uses: 13, thirteen or Thirteen
+        if found.isdigit():
+            return str(n)
+        return word.capitalize() if found[0].isupper() else word
+
     changed = []
     for f, patterns in count_targets():
         text = f.read_text()
         new = text
         for p in patterns:
-            new = re.sub(p, lambda m: m.group(0).replace(
-                m.group(1), word.capitalize() if m.group(1)[0].isupper() else word), new, flags=re.I)
+            new = re.sub(p, lambda m: m.group(0)[:m.start(1) - m.start(0)] + spell(m.group(1))
+                         + m.group(0)[m.end(1) - m.start(0):], new, flags=re.I)
         if new != text:
             f.write_text(new)
             changed.append(f)
@@ -277,6 +287,7 @@ def bump_modified(paths, today: dt.date) -> None:
         t = re.sub(r"Last updated: \d{1,2} [A-Z][a-z]+ \d{4}", f"Last updated: {long_date(str(today))}", t)
         f.write_text(t)
         rel = f.relative_to(ROOT).as_posix()
+        rel = "" if rel == "index.html" else rel  # the homepage is listed as /
         sm = re.sub(rf"(<loc>{re.escape(SITE)}/{re.escape(rel)}</loc>\s*<lastmod>)[^<]+",
                     rf"\g<1>{today}", sm)
     SITEMAP.write_text(sm)
@@ -641,7 +652,8 @@ def cmd_validate(args) -> None:
         if f.parent.name == "research" and f.name not in pages:
             continue  # the noindex redirect stub
         text = f.read_text()
-        found = {m.group(1).lower() for p in patterns for m in re.finditer(p, text, re.I)}
+        found = {number_word(int(g)) if g.isdigit() else g.lower()
+                 for p in patterns for g in (m.group(1) for m in re.finditer(p, text, re.I))}
         rel = f.relative_to(ROOT).as_posix()
         if not found:
             errors.append(f"{rel}: the paper-count sentence is missing")

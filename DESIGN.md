@@ -10,9 +10,11 @@ in the same commit. A rule nobody enforces is worse than no rule.
 
 ## What this site is trying to be
 
-A bright, flat, poster-like site about one Amazigh family's deep ancestry, built for
-readers who are curious but not academic — teenagers and young adults first, specialists
-second. The evidence is scholarly. The presentation is not.
+A bright, flat, poster-like site about how migrations shaped North Africa's population,
+told from the published genetics, with one Amazigh family's deep ancestry as a worked
+example on its own page ("One family", `lineage.html`). It is built for readers who are
+curious but not academic — teenagers and young adults first, specialists second. The
+evidence is scholarly. The presentation is not.
 
 The previous system failed on this point in a specific, diagnosable way: one hue
 (warm brown) across every surface, a reading serif at every size, and a uniform grid
@@ -82,8 +84,9 @@ Four hues with genuine separation, so series are distinguished by hue, not by li
 ```
 
 Series colour is stable across the whole site: **the father's line is always sea, the
-mother's line is always yaz.** A reader who learns that on the homepage should not have
-to relearn it on any other page.
+mother's line is always yaz.** A reader who learns that on one page should not have
+to relearn it on another. Migration arrows are yaz as well: solid for ancestry arriving,
+dashed for ancestry leaving.
 
 **Colour is never the only cue.** Every series also carries a non-colour identifier — a
 dash pattern, a distinct marker shape, or a text label placed directly on the mark.
