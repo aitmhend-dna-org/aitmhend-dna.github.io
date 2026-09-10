@@ -45,7 +45,7 @@
   <!-- Complete Lineage Analysis -->
   <url>
     <loc>https://northafricanorigins.com/lineage.html</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -243,4 +243,20 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- Research Article: A shared selection signal links Canary Islanders and North Africa -->
+  <url>
+    <loc>https://northafricanorigins.com/research/canary-islanders-exome-ancestry-2026.html</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Research Article: North African ancestry in Sicily before the Islamic conquest -->
+  <url>
+    <loc>https://northafricanorigins.com/research/medieval-sicily-north-african-ancestry-2026.html</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
