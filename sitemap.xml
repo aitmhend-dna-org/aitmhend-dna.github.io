@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <!-- Homepage -->
   <url>
@@ -9,11 +7,6 @@
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://northafricanorigins.com/img/E-PF2546-map.png</image:loc>
-      <image:title>E-M81 Berber Marker Distribution Across North Africa</image:title>
-      <image:caption>Geographic distribution of the E-M81 "Berber Marker" showing concentration in Maghreb region</image:caption>
-    </image:image>
   </url>
 
   <!-- Start Here Page -->
@@ -22,11 +15,6 @@
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://northafricanorigins.com/img/hero-dna-morocco.jpg</image:loc>
-      <image:title>Start Here - Amazigh Lineage Heritage</image:title>
-      <image:caption>Guided entry page with three reading routes for first-time visitors</image:caption>
-    </image:image>
   </url>
 
   <!-- Glossary Page -->
@@ -35,11 +23,6 @@
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://northafricanorigins.com/img/genetic-tree.jpg</image:loc>
-      <image:title>Glossary - Amazigh Genetics Terms</image:title>
-      <image:caption>Definitions of haplogroup, TMRCA, aDNA, mtDNA, and Y-DNA</image:caption>
-    </image:image>
   </url>
   
   <!-- Complete Lineage Analysis -->
@@ -48,16 +31,6 @@
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://northafricanorigins.com/img/E-PF2546-distribution.png</image:loc>
-      <image:title>E-PF2546 Geographic Distribution Chart</image:title>
-      <image:caption>E-PF2546 subclade distribution showing highest concentrations in Mauritania, Western Sahara, and Morocco</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://northafricanorigins.com/img/map-h-haplo.png</image:loc>
-      <image:title>H1 Haplogroup Distribution and Migration Patterns</image:title>
-      <image:caption>H1 haplogroup distribution showing prehistoric migration from Franco-Cantabrian refuge to North Africa</image:caption>
-    </image:image>
   </url>
   
   <!-- Genetics Revolution Page -->
@@ -66,11 +39,6 @@
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://northafricanorigins.com/img/E-PF2546-map.png</image:loc>
-      <image:title>DNA Revolution in Human Migration Studies</image:title>
-      <image:caption>How modern DNA sequencing revolutionizes our understanding of human migration patterns and ancient history</image:caption>
-    </image:image>
   </url>
   
   <!-- Cultural Heritage Page -->
@@ -79,11 +47,6 @@
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://northafricanorigins.com/img/E-PF2546-map.png</image:loc>
-      <image:title>Souss-Massa Cultural Heritage and Amazigh Traditions</image:title>
-      <image:caption>Rich cultural heritage of Souss-Massa region from ancient Amazigh confederations to modern traditions</image:caption>
-    </image:image>
   </url>
 
   <!-- Research Blog Page -->
@@ -92,11 +55,6 @@
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://northafricanorigins.com/img/E-PF2546-map.png</image:loc>
-      <image:title>Research Blog - North African Genetic Studies</image:title>
-      <image:caption>Summaries of peer-reviewed research on Amazigh genetics and North African population history</image:caption>
-    </image:image>
   </url>
 
   <!-- Research Article: Green Sahara Ancient DNA -->
@@ -209,37 +167,37 @@
   </url>
   <url>
     <loc>https://northafricanorigins.com/fr/</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://northafricanorigins.com/fr/lineage.html</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://northafricanorigins.com/fr/limitations.html</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://northafricanorigins.com/ar/</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://northafricanorigins.com/ar/lineage.html</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://northafricanorigins.com/ar/limitations.html</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

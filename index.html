@@ -66,13 +66,32 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "North African Origins",
-      "alternateName": "North African Amazigh Heritage",
-      "url": "https://northafricanorigins.com/",
-      "description": "How migrations shaped North Africa's population over 20,000 years, told from peer-reviewed ancient-DNA and genome studies.",
-      "inLanguage": "en",
-      "dateModified": "2026-09-10"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://northafricanorigins.com/#website",
+          "name": "North African Origins",
+          "alternateName": "North African Amazigh Heritage",
+          "url": "https://northafricanorigins.com/",
+          "description": "How migrations shaped North Africa's population over 20,000 years, told from peer-reviewed ancient-DNA and genome studies.",
+          "inLanguage": ["en", "fr", "ar"],
+          "dateModified": "2026-09-10",
+          "publisher": { "@id": "https://northafricanorigins.com/#organization" }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://northafricanorigins.com/#organization",
+          "name": "North African Origins",
+          "url": "https://northafricanorigins.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://northafricanorigins.com/icon-512x512.png",
+            "width": 512,
+            "height": 512
+          },
+          "description": "An independent, non-commercial account of how migrations shaped North Africa's population, cited to published literature."
+        }
+      ]
     }
     </script>
 </head>

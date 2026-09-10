@@ -40,7 +40,11 @@ LEDGER = HERE / "screened.json"
 MAIN_TEMPLATE = HERE / "article-main.html"
 INDEX = ROOT / "research.html"
 SITEMAP = ROOT / "sitemap.xml"
+LLMS = ROOT / "llms.txt"
 SITE = "https://northafricanorigins.com"
+# The top-level pages llms.txt lists, in reading order. Research pages come from research.html.
+LLMS_PAGES = ["index.html", "start-here.html", "lineage.html", "genetics.html", "culture.html",
+              "maps-sites.html", "glossary.html", "limitations.html", "research.html"]
 EPMC = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
 UA = "northafricanorigins-research-scout/1.0 (+https://northafricanorigins.com)"
 MAX_ACCEPTS = 2
@@ -64,7 +68,7 @@ PLACE = ('("North Africa" OR "North African" OR "Northwest Africa" OR Maghreb OR
 
 # The only files a scout run may change. Anything else fails validation.
 ALLOWED = re.compile(
-    r"^(research\.html|lineage\.html|index\.html|start-here\.html|sitemap\.xml|research/[a-z0-9-]+\.html"
+    r"^(research\.html|lineage\.html|index\.html|start-here\.html|sitemap\.xml|llms\.txt|research/[a-z0-9-]+\.html"
     r"|changelog/unreleased/[a-z0-9-]+\.md|\.github/research-scout/screened\.json)$")
 
 # Hard limits on the model's prose. PROMPT.md asks for less; the margin means a run is
@@ -474,6 +478,46 @@ def add_to_sitemap(file: str, title: str, today: dt.date) -> None:
     SITEMAP.write_text(sub_once(r"</urlset>", lambda _m: entry + "</urlset>", sm))
 
 
+def build_llms() -> str:
+    """llms.txt (https://llmstxt.org): a plain-text map of the site for AI assistants and
+    agents. Rebuilt from the pages' own titles, descriptions and research list, so it
+    cannot drift from them."""
+    _, _, items, _ = index_items(INDEX.read_text())
+    md = lambda s: s.replace("[", "(").replace("]", ")")
+    out = ["# North African Origins", "",
+           "> How migrations shaped North Africa's population over 20,000 years, told from "
+           "peer-reviewed ancient-DNA and genome studies, with one Amazigh (Berber) family from "
+           "Souss-Massa, Morocco, as a worked example.", "",
+           "An independent, non-commercial site. Claims are cited to published literature; where "
+           "they are not, the page says so. Dates keep their published ranges. Each research "
+           "summary is an aid to reading, not the paper: cite the paper itself, by its DOI.", "",
+           "## Pages", ""]
+    for name in LLMS_PAGES:
+        t = (ROOT / name).read_text()
+        title = clean(re.search(r"<title>(.*?)</title>", t, re.S).group(1))
+        desc = clean(re.search(r'<meta name="description" content="([^"]*)"', t).group(1))
+        out.append(f"- [{md(title)}]({SITE}/{'' if name == 'index.html' else name}): {desc}")
+    out += ["", "## Research summaries", "", f"{len(items)} papers, newest first.", ""]
+    for i in items:
+        x = item_fields(i)
+        title = clean(re.search(r'<h3 class="paper__title">(.*?)</h3>', i, re.S).group(1))
+        finding = clean(re.search(r'<p class="paper__finding">(.*?)</p>', i, re.S).group(1))
+        authors = clean(re.search(r'<p class="paper__meta">(.*?)&middot;', i, re.S).group(1))
+        out.append(f"- [{md(title)}]({SITE}/{x['href']}): {authors}, {x['journal']}, "
+                   f"{long_date(x['date'])}, https://doi.org/{x['doi']}. {finding}")
+    out += ["", "## Optional", "",
+            f"- [Origines nord-africaines]({SITE}/fr/): French translations of the homepage, "
+            "the family case and the limits page",
+            f"- [أصول شمال إفريقيا]({SITE}/ar/): Arabic translations of the same three pages",
+            f"- [Contact]({SITE}/contact.html): corrections and questions", ""]
+    return "\n".join(out)
+
+
+def cmd_llms(args) -> None:
+    LLMS.write_text(build_llms())
+    print(f"Wrote {LLMS.relative_to(ROOT)}")
+
+
 def cmd_apply(args) -> None:
     cand_file = WORK / "candidates.json"
     candidates = {c["doi"]: c for c in json.loads(cand_file.read_text())} if cand_file.exists() else {}
@@ -540,6 +584,7 @@ def cmd_apply(args) -> None:
         INDEX.write_text(index_text[:start] + "".join(items) + tail + index_text[end:])
         changed = sync_counts(len(items))
         bump_modified(set(changed) | {INDEX}, today)
+        LLMS.write_text(build_llms())
         frag = ROOT / "changelog" / "unreleased" / f"research-scout-{today}.md"
         frag.parent.mkdir(parents=True, exist_ok=True)
         frag.write_text("### Added\n" + "".join(
@@ -644,6 +689,14 @@ def cmd_validate(args) -> None:
                 if norm_journal(cr["journal"]) != norm_journal(x["journal"]):
                     errors.append(f"{x['doi']}: listed in {x['journal']}, Crossref says {cr['journal']}")
 
+    # Coverage, not byte-equality: a hand edit to a page title must not block a run.
+    llms = LLMS.read_text() if LLMS.exists() else ""
+    if not llms:
+        errors.append("llms.txt is missing")
+    for x in listed if llms else []:
+        if f"({SITE}/{x['href']})" not in llms:
+            errors.append(f"{x['href']} is missing from llms.txt")
+
     for f in sorted((ROOT / "research").glob("*.html")):
         if f.name not in pages and "noindex" not in f.read_text():
             errors.append(f"research/{f.name} exists but is not listed in research.html")
@@ -688,11 +741,13 @@ def main() -> None:
     c = sub.add_parser("candidates")
     c.add_argument("--days", type=int, default=28)
     sub.add_parser("apply")
+    sub.add_parser("llms", help="rebuild llms.txt from the pages")
     v = sub.add_parser("validate")
     v.add_argument("--offline", action="store_true", help="skip the Crossref checks")
     v.add_argument("--check-changed", action="store_true", help="fail on changes outside the scout allowlist")
     args = ap.parse_args()
-    {"candidates": cmd_candidates, "apply": cmd_apply, "validate": cmd_validate}[args.cmd](args)
+    {"candidates": cmd_candidates, "apply": cmd_apply, "llms": cmd_llms,
+     "validate": cmd_validate}[args.cmd](args)
 
 
 if __name__ == "__main__":
