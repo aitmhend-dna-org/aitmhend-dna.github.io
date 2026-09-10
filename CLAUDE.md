@@ -21,7 +21,7 @@ This is a **no-build static site** — plain HTML, CSS, and vanilla JS. No packa
 
 - `index.html`, `lineage.html`, `genetics.html`, `culture.html`, `research.html`, `contact.html`,
   `start-here.html`, `glossary.html`, `maps-sites.html`, `limitations.html` — the site pages
-- `research/*.html` — twelve paper summaries
+- `research/*.html` — one summary per paper listed on `research.html` (the scout adds new ones)
 - `css/main.css` — the current design system (see `DESIGN.md`). `css/styles.css` is the legacy stylesheet still serving un-migrated pages; it is deleted when the last page moves over. A page loads one or the other, never both
 - `js/reading-aids.js` — TOC rail, reading progress, back-to-top
 - `img/` — legacy WebP imagery (plus `og-card.jpg` for social). Migrated pages use authored inline SVG diagrams instead of photographs — see the Imagery section of `DESIGN.md`
