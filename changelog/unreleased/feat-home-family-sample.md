@@ -1,0 +1,2 @@
+### Added
+- The homepage has a "Where one family fits" section after the timeline. It places the family's two DNA lines in the regional layers as one sample: the father's line E-PF2546 as a branch of E-M81, the region's most common Y-chromosome, and the mother's line H1-T16189C! from the H1 branch that came from Europe. Each claim cites a paper summarised on the site, the section links to the timeline steps and the family page, and the hero links down to it (#93)
