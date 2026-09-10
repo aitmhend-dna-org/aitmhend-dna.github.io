@@ -1,0 +1,2 @@
+### Fixed
+- Each research page's structured data described the page as if it were the paper itself (the paper's title, date and DOI as the page's own). It now describes what the page is: this site's summary, based on the paper, with the paper's title, publication date, journal, DOI and full citation nested inside. Search engines and AI agents can tell the summary from the source and cite the source. The research scout writes new pages the same way, and its validation reads the paper's date and DOI from there (#97)

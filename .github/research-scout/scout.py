@@ -422,6 +422,39 @@ def render_item(c: dict, k: dict, file: str) -> str:
         '\n                    </li>')
 
 
+ORG = {"@type": "Organization", "name": "North African Origins", "url": f"{SITE}/",
+       "logo": {"@type": "ImageObject", "url": f"{SITE}/icon-512x512.png"}}
+
+
+def article_ld(url: str, headline: str, description: str, published: str, modified: str,
+               paper: dict) -> str:
+    """JSON-LD for a research page. The page is this site's summary (an Article) based on
+    the paper (a ScholarlyArticle); it must never present itself as the paper."""
+    doi_url = f"https://doi.org/{paper['doi']}"
+    ld = {"@context": "https://schema.org", "@type": "Article",
+          "headline": headline, "description": description,
+          "url": url, "mainEntityOfPage": url, "inLanguage": "en",
+          "datePublished": published, "dateModified": modified,
+          "author": ORG, "publisher": ORG,
+          "isBasedOn": {"@type": "ScholarlyArticle", "@id": doi_url, "headline": paper["title"],
+                        "datePublished": paper["date"],
+                        "isPartOf": {"@type": "Periodical", "name": paper["journal"]},
+                        "identifier": {"@type": "PropertyValue", "propertyID": "DOI",
+                                       "value": paper["doi"]},
+                        "sameAs": doi_url},
+          "citation": paper["citation"]}
+    text = json.dumps(ld, indent=2, ensure_ascii=False).replace("</", "<\\/")
+    return '<script type="application/ld+json">\n' + textwrap.indent(text, "    ") + "\n    </script>"
+
+
+def page_ld(page: str) -> dict | None:
+    m = re.search(r'<script type="application/ld\+json">(.*?)</script>', page, re.S)
+    try:
+        return json.loads(m.group(1)) if m else None
+    except json.JSONDecodeError:
+        return None
+
+
 def render_page(c: dict, k: dict, file: str, today: dt.date, base: str, count: int) -> str:
     """Build a new article on top of an existing one, so header, nav and footer are
     always the site's current chrome rather than a copy that can drift."""
@@ -444,11 +477,9 @@ def render_page(c: dict, k: dict, file: str, today: dt.date, base: str, count: i
         "updated_long": long_date(str(today)),
     }
     main = re.sub(r"\{\{(\w+)\}\}", lambda m: values[m.group(1)], main)
-    ld = json.dumps({"@context": "https://schema.org", "@type": "ScholarlyArticle",
-                     "headline": c["title"], "url": url, "inLanguage": "en",
-                     "datePublished": c["date"], "dateModified": str(today),
-                     "sameAs": f"https://doi.org/{c['doi']}"}, indent=2, ensure_ascii=False)
-    ld = '<script type="application/ld+json">\n' + textwrap.indent(ld.replace("</", "<\\/"), "    ") + "\n    </script>"
+    ld = article_ld(url, k["list_title"], k["description"], str(today), str(today),
+                    {"doi": c["doi"], "title": c["title"], "date": c["date"],
+                     "journal": c["journal"], "citation": citation(c)})
     swaps = [
         (r"<title>.*?</title>", f"<title>{e(head_title)}</title>"),
         (r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{a(k["description"])}">'),
@@ -668,12 +699,15 @@ def cmd_validate(args) -> None:
         kicker = re.search(r'class="kicker"><time datetime="([^"]+)">[^<]+</time> &middot; ([^<]+)</span>', page)
         if not kicker or kicker.group(1) != x["date"] or norm_journal(kicker.group(2)) != norm_journal(x["journal"]):
             errors.append(f"{x['href']}: kicker date/journal does not match research.html")
-        published = re.search(r'"datePublished": "([^"]+)"', page)
-        if not published or published.group(1) != x["date"]:
-            errors.append(f"{x['href']}: JSON-LD datePublished does not match research.html")
-        same = re.search(r'"sameAs": "https://doi\.org/([^"]+)"', page)
-        if not same or same.group(1).lower() != x["doi"]:
-            errors.append(f"{x['href']}: JSON-LD sameAs is not the listed DOI")
+        ld = page_ld(page)
+        paper = ld.get("isBasedOn") if isinstance(ld, dict) else None
+        if not isinstance(paper, dict):
+            errors.append(f"{x['href']}: JSON-LD is missing, invalid, or has no isBasedOn paper")
+        else:
+            if paper.get("datePublished") != x["date"]:
+                errors.append(f"{x['href']}: JSON-LD paper date does not match research.html")
+            if str(paper.get("sameAs", "")).lower() != f"https://doi.org/{x['doi']}":
+                errors.append(f"{x['href']}: JSON-LD paper DOI is not the listed DOI")
         for section in ("summary", "takeaways", "relevance"):
             if f'id="{section}"' not in page:
                 errors.append(f"{x['href']}: missing the #{section} section")
