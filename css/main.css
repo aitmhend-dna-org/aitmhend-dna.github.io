@@ -1086,6 +1086,28 @@ select:focus-visible {
     color: var(--sea);
 }
 
+/* Year and exact date share one grid cell: side by side on phones, stacked
+   in the 7rem column from 800px. The date is first online publication. */
+.paper__when {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 0.75rem;
+}
+
+@media (min-width: 800px) {
+    .paper__when { flex-direction: column; gap: 0.1rem; }
+}
+
+.paper__date {
+    font-family: var(--font-mono);
+    font-size: var(--t-xs);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    white-space: nowrap;
+}
+
 .paper__title {
     font-family: var(--font-display);
     font-weight: 800;
@@ -1108,6 +1130,14 @@ select:focus-visible {
     font-size: var(--t-xs);
     letter-spacing: 0.04em;
     color: var(--ink-quiet);
+}
+
+/* The journal was here all along in quiet grey and read as noise; in ink it
+   is the second thing the eye finds after the title. */
+.paper__journal {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--ink);
 }
 
 /* A figure inside a colour band: the caption cannot keep its ink-on-paper
