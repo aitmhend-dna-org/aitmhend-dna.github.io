@@ -16,6 +16,7 @@ Thumbs.db
 
 # Research scout scratch (candidates, Claude's decisions and prose)
 .scout/
+__pycache__/
 
 # Documentation (optional - remove if you want to track docs)
 # docs/
