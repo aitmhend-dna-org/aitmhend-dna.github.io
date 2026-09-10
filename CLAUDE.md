@@ -27,6 +27,8 @@ This is a **no-build static site** — plain HTML, CSS, and vanilla JS. No packa
 - `img/` — legacy WebP imagery (plus `og-card.jpg` for social). Migrated pages use authored inline SVG diagrams instead of photographs — see the Imagery section of `DESIGN.md`
 - `docs/` — research notes and SEO documentation
 - `.github/research-scout/` + `.github/workflows/research-scout.yml` — the weekly research scout, which adds new papers to `research.html` and `research/` on its own. Its page template and count-sync logic live in `scout.py`; if you change the article layout or the "All N summaries" wording, change them there too, or `scout.py validate` will fail the next run. See its `README.md`
+- `llms.txt` — the plain-text site map for AI assistants and agents (llmstxt.org). It is generated: run `python3 .github/research-scout/scout.py llms` after changing a top-level page's title or description, and the scout rebuilds it whenever it adds a paper. Do not hand-edit it
+- `404.html` — served by GitHub Pages at any missing URL, so every link in it is root-absolute (`/css/main.css`). It is the one page whose chrome differs from the rest; leave it out of site-wide chrome sweeps and hash checks. `noindex`, not in the sitemap
 - Chart.js and Mermaid configs are inline per page; shared behaviour is in `js/reading-aids.js`
 
 Every page follows the same structure: constant brand `<header>` → sticky `<nav>` → breadcrumb → `<main id="main-content">` carrying the page `<h1>` → shared `<footer>`. Each page includes full SEO markup (Open Graph, Twitter Cards, JSON-LD structured data, canonical URLs, geo-tags).

@@ -8,8 +8,8 @@ the site, then opens a PR, merges it and deploys.
 |---|---|---|
 | `scout.py candidates` | script | Europe PMC search (PubMed-indexed journals only) over the last 28 days. DOIs already on the site or in `screened.json` are skipped. Everything else is checked against Crossref, and anything that isn't a journal article is dropped. No candidates means the run stops here and Claude is never called. |
 | Claude step | Claude Opus 5 | Reads `PROMPT.md` and the candidates. Accepts or rejects each one and writes the prose for at most two. It has only Read/Write tools and may write only under `.scout/`; the next step fails the run if it wrote anywhere else. |
-| `scout.py apply` | script | Builds the article page on top of an existing one (so header, nav and footer stay current), inserts it in `research.html` by date, updates the paper count everywhere it is spelled out, and updates the sitemap, `Last updated` dates, a changelog fragment and `screened.json`. |
-| `scout.py validate` | script | The merge gate. Every DOI on the research page must match Crossref's date and journal. Each article must agree with the index, the count must read the same everywhere, the chrome must be identical, and only allowed files may have changed. |
+| `scout.py apply` | script | Builds the article page on top of an existing one (so header, nav and footer stay current), inserts it in `research.html` by date, updates the paper count everywhere it is spelled out, and updates the sitemap, `llms.txt`, `Last updated` dates, a changelog fragment and `screened.json`. |
+| `scout.py validate` | script | The merge gate. Every DOI on the research page must match Crossref's date and journal. Each article must agree with the index, the count must read the same everywhere, the chrome must be identical, every paper must be listed in `llms.txt`, and only allowed files may have changed. |
 | PR step | workflow | Branch, PR, merge, Pages build. |
 
 Titles, journals, dates and authors always come from Crossref; Claude supplies prose only.
