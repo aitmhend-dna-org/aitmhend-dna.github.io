@@ -1,5 +1,93 @@
 {
   "screened": {
+    "10.1001/jamaophthalmol.2025.4888": {
+      "decision": "reject",
+      "reason": "Clinical genetics of congenital stationary night blindness caused by EGFLAM variants.",
+      "title": "EGFLAM Pathogenic Variants and Congenital Stationary Night Blindness",
+      "journal": "JAMA Ophthalmology",
+      "date": "2026-01-01",
+      "screened": "2026-09-16"
+    },
+    "10.1002/ajhb.70253": {
+      "decision": "reject",
+      "reason": "A trait-association study of lactase persistence alleles, correlating their frequencies with Y haplogroups rather than reconstructing migration.",
+      "title": "The Geographical Distribution of Lactose Tolerance‐Associated Alleles 13910*T and 13915*G Is Strongly Linked to Male Founder Events in Eurasia",
+      "journal": "American Journal of Human Biology",
+      "date": "2026-05-20",
+      "screened": "2026-09-16"
+    },
+    "10.1002/ajpa.70172": {
+      "decision": "reject",
+      "reason": "Infers mobility in the Amazigh population of Gran Canaria from femoral bone geometry, a skeletal rather than genetic line of evidence.",
+      "title": "Femoral Cross‐Sectional Geometry in the Amazigh Population of Gran Canaria (Canary Islands, Spain): Insights Into Mobility Patterns on an Island Landscape",
+      "journal": "American Journal of Biological Anthropology",
+      "date": "2025-11-24",
+      "screened": "2026-09-16"
+    },
+    "10.1002/ajpa.70262": {
+      "decision": "reject",
+      "reason": "Tests Green Sahara population models from dental morphological traits at Gobero, not from DNA, so it falls outside the genetic evidence this site is built on.",
+      "title": "Early to Middle Holocene Hunter‐Fisher‐Gatherers From the Green Sahara (Gobero, Niger): Dental Evidence for Regional African Affinities",
+      "journal": "American Journal of Biological Anthropology",
+      "date": "2026-05-25",
+      "screened": "2026-09-16"
+    },
+    "10.1002/ana.78181": {
+      "decision": "reject",
+      "reason": "Clinical genetics of age at onset in LRRK2 Parkinson's disease.",
+      "title": "The Age at Onset of LRRK2 p. Gly2019Ser Parkinson's Disease Across Ancestries and Countries of Origin",
+      "journal": "Annals of Neurology",
+      "date": "2026-02-24",
+      "screened": "2026-09-16"
+    },
+    "10.1002/cpt.70153": {
+      "decision": "reject",
+      "reason": "A pharmacogenetics guideline update for SLCO1B1 allele functionality.",
+      "title": "An Update to the Clinical Pharmacogenetics Implementation Consortium ( CPIC ) SLCO1B1 Allele Functionality Table Leveraging Evidence from Participants of Predominantly Sub‐Saharan African Ancestry",
+      "journal": "Clinical Pharmacology & Therapeutics",
+      "date": "2025-12-01",
+      "screened": "2026-09-16"
+    },
+    "10.1002/ece3.72262": {
+      "decision": "reject",
+      "reason": "Non-human: invasion pathways of a slender iceplant in North America.",
+      "title": "Population Genetics Reveals the Invasion Pathways of Mesembryanthemum nodiflorum in North America",
+      "journal": "Ecology and Evolution",
+      "date": "2025-10-15",
+      "screened": "2026-09-16"
+    },
+    "10.1002/ece3.72748": {
+      "decision": "reject",
+      "reason": "Non-human: variation in Aedes aegypti mosquito populations in West Africa.",
+      "title": "Morphological and Genetic Heterogeneity in Aedes aegypti (Diptera: Culicidae) Populations Across Diverse Landscapes in West Africa",
+      "journal": "Ecology and Evolution",
+      "date": "2025-12-17",
+      "screened": "2026-09-16"
+    },
+    "10.1002/ijc.70332": {
+      "decision": "reject",
+      "reason": "Clinical study of breast cancer subtypes and their risk factors in Ghana.",
+      "title": "Etiology of gene expression‐based subtypes of breast cancer in the Ghana Breast Health Study",
+      "journal": "International Journal of Cancer",
+      "date": "2026-01-16",
+      "screened": "2026-09-16"
+    },
+    "10.1002/mds.70302": {
+      "decision": "reject",
+      "reason": "Clinical review of monogenic Parkinson's disease genes in African patients.",
+      "title": "Genetic Landscape of Monogenic Parkinson's Disease in the African Population—A Systematic Review",
+      "journal": "Movement Disorders",
+      "date": "2026-04-09",
+      "screened": "2026-09-16"
+    },
+    "10.1007/s00248-025-02612-2": {
+      "decision": "reject",
+      "reason": "Non-human: bacterial and archaeal communities in lake sediment DNA.",
+      "title": "Temporal succession of bacterial and archaeal communities in a Mediterranean high-mountain lake over the last 430 years using sedimentary DNA",
+      "journal": "Microbial Ecology",
+      "date": "2025-10-17",
+      "screened": "2026-09-16"
+    },
     "10.1007/s00414-026-03848-4": {
       "decision": "reject",
       "reason": "Y-chromosome forensic reference study of Colombian populations, with no North African result.",
@@ -7,6 +95,30 @@
       "journal": "International Journal of Legal Medicine",
       "date": "2026-05-28",
       "screened": "2026-09-10"
+    },
+    "10.1007/s00436-025-08586-x": {
+      "decision": "reject",
+      "reason": "Non-human: phylogeography of Hyalomma marginatum ticks in Corsica.",
+      "title": "Phylogeography and structure of Hyalomma marginatum populations in the context of Corsica, France",
+      "journal": "Parasitology Research",
+      "date": "2025-11-18",
+      "screened": "2026-09-16"
+    },
+    "10.1007/s10528-026-11318-0": {
+      "decision": "reject",
+      "reason": "Non-human: genetic diversity of Tunisian tall fescue grass.",
+      "title": "Genetic Diversity and Population Structure of Tunisian Festuca Arundinacea Schreb. Revealed by Functional Gene-Based Markers",
+      "journal": "Biochemical Genetics",
+      "date": "2026-01-20",
+      "screened": "2026-09-16"
+    },
+    "10.1007/s10689-026-00530-x": {
+      "decision": "reject",
+      "reason": "Clinical review of hereditary ovarian cancer risk in women of African ancestry.",
+      "title": "Hereditary ovarian cancer in women with African ancestry: a scoping review",
+      "journal": "Familial Cancer",
+      "date": "2026-01-31",
+      "screened": "2026-09-16"
     },
     "10.1007/s10903-026-01944-6": {
       "decision": "reject",
@@ -40,6 +152,14 @@
       "date": "2026-06-01",
       "screened": "2026-09-10"
     },
+    "10.1007/s12024-025-01115-3": {
+      "decision": "reject",
+      "reason": "Pools published forensic Y-STR databases to report marker diversity and clustering, with North Africa one region among many and no migration finding.",
+      "title": "Deciphering the genetic diversity in the Arabian Peninsula and Africa: insights from Y-STR data",
+      "journal": "Forensic Science, Medicine and Pathology",
+      "date": "2025-11-06",
+      "screened": "2026-09-16"
+    },
     "10.1007/s12072-026-11107-2": {
       "decision": "reject",
       "reason": "Global burden analysis of liver cancer weighted by disease risk alleles, a clinical study.",
@@ -64,6 +184,54 @@
       "date": "2026-09",
       "screened": "2026-09-10"
     },
+    "10.1016/j.anaerobe.2026.103032": {
+      "decision": "reject",
+      "reason": "Non-human: population structure of the bacterium Borrelia lusitaniae and its tick vector.",
+      "title": "Vertebrate host or tick vector? Which is to blame for Borrelia lusitaniae population structure?",
+      "journal": "Anaerobe",
+      "date": "2026-03",
+      "screened": "2026-09-16"
+    },
+    "10.1016/j.cub.2025.09.035": {
+      "decision": "reject",
+      "reason": "Non-human: ancient DNA from hippos in central Europe.",
+      "title": "Ancient DNA and dating evidence for the dispersal of hippos into central Europe during the last glacial",
+      "journal": "Current Biology",
+      "date": "2025-11",
+      "screened": "2026-09-16"
+    },
+    "10.1016/j.forsciint.2026.112959": {
+      "decision": "reject",
+      "reason": "A forensic study of fingerprint pattern distributions, with no genetic data at all.",
+      "title": "Fingerprint pattern distributions under the Vucetich and Henry systems: A large-scale statistical assessment with cross-national comparisons",
+      "journal": "Forensic Science International",
+      "date": "2026-08",
+      "screened": "2026-09-16"
+    },
+    "10.1016/j.fsigen.2025.103389": {
+      "decision": "reject",
+      "reason": "A forensic microhaplotype panel built for ancestry inference in casework.",
+      "title": "MHappaMundi: A custom AmpliSeq microhaplotype panel for ancestry inference",
+      "journal": "Forensic Science International: Genetics",
+      "date": "2026-02",
+      "screened": "2026-09-16"
+    },
+    "10.1016/j.ijid.2026.108759": {
+      "decision": "reject",
+      "reason": "Sequences HIV genomes to study transmission between age groups in South Africa, not human population history.",
+      "title": "Moderately age-disparate relationships dominate phylogenetically linked pairs involving young women with HIV in KwaZulu-Natal, South Africa",
+      "journal": "International Journal of Infectious Diseases",
+      "date": "2026-08",
+      "screened": "2026-09-16"
+    },
+    "10.1016/j.ijpharm.2025.126326": {
+      "decision": "reject",
+      "reason": "A pharmaceutical formulation study of 3D printed hydroxyurea for children.",
+      "title": "3D printed hydroxyurea for pediatric use: toward personalized formulations and reduced exposure risk",
+      "journal": "International Journal of Pharmaceutics",
+      "date": "2025-12",
+      "screened": "2026-09-16"
+    },
     "10.1016/j.ijpp.2026.06.003": {
       "decision": "reject",
       "reason": "Paleopathological diagnosis of Paget disease in a single Canary Islands skeleton, with the mitochondrial haplogroup reported only as one line of a clinical case study.",
@@ -71,6 +239,14 @@
       "journal": "International Journal of Paleopathology",
       "date": "2026-09",
       "screened": "2026-09-10"
+    },
+    "10.1016/j.isci.2025.113771": {
+      "decision": "reject",
+      "reason": "Non-human: ancient genomes of goats herded in the Canary Islands.",
+      "title": "Paleogenomic evidence on the temporal continuity of indigenous goat exploitation in the Canary Islands",
+      "journal": "iScience",
+      "date": "2025-11",
+      "screened": "2026-09-16"
     },
     "10.1016/j.isci.2026.117104": {
       "decision": "reject",
@@ -88,6 +264,14 @@
       "date": "2026-08",
       "screened": "2026-09-10"
     },
+    "10.1016/j.jacl.2026.04.029": {
+      "decision": "reject",
+      "reason": "Clinical disease genetics estimating sitosterolemia burden from ABCG5/ABCG8 variants in Qatar.",
+      "title": "Population enrichment of ABCG5/ABCG8 variants in Qatar and genetic estimates of sitosterolemia burden",
+      "journal": "Journal of Clinical Lipidology",
+      "date": "2026-07",
+      "screened": "2026-09-16"
+    },
     "10.1016/j.jhevol.2026.103855": {
       "decision": "reject",
       "reason": "Dental-morphology study of dispersals within and out of Africa whose results concern East and South Africa and yield no North African finding.",
@@ -104,6 +288,38 @@
       "date": "2026-08",
       "screened": "2026-09-10"
     },
+    "10.1016/j.meegid.2025.105863": {
+      "decision": "reject",
+      "reason": "Disease genetics of the Duffy antigen gene in relation to Plasmodium vivax circulation in sub-Saharan Africa.",
+      "title": "Genetic dynamics of the Duffy antigen receptor for chemokines gene and Plasmodium vivax circulation within sub-Saharan Africa",
+      "journal": "Infection, Genetics and Evolution",
+      "date": "2026-01",
+      "screened": "2026-09-16"
+    },
+    "10.1016/j.meegid.2025.105868": {
+      "decision": "reject",
+      "reason": "Non-human: microsatellite panel for the tapeworm Echinococcus granulosus.",
+      "title": "A panel of five microsatellites as an alternative to mitogenome sequencing for investigating the genetic diversity of Echinococcus granulosus sensu stricto from global to farm scale",
+      "journal": "Infection, Genetics and Evolution",
+      "date": "2026-01",
+      "screened": "2026-09-16"
+    },
+    "10.1016/j.meegid.2026.105881": {
+      "decision": "reject",
+      "reason": "Non-human: population structure of tsetse flies in Kenya for vector control.",
+      "title": "Population structure of G. pallidipes tsetse flies in Northwestern Kenya - Towards effective vector control",
+      "journal": "Infection, Genetics and Evolution",
+      "date": "2026-03",
+      "screened": "2026-09-16"
+    },
+    "10.1016/j.nmd.2025.106283": {
+      "decision": "reject",
+      "reason": "Clinical genetics of peripheral neuropathies in South African children.",
+      "title": "Expression of genetic peripheral neuropathies in South African children",
+      "journal": "Neuromuscular Disorders",
+      "date": "2026-02",
+      "screened": "2026-09-16"
+    },
     "10.1016/j.onehlt.2026.101475": {
       "decision": "reject",
       "reason": "Tick dispersal by migratory birds and Crimean-Congo haemorrhagic fever surveillance, a non-human study.",
@@ -112,6 +328,14 @@
       "date": "2026-12",
       "screened": "2026-09-10"
     },
+    "10.1016/j.pld.2025.12.015": {
+      "decision": "reject",
+      "reason": "Non-human: phylogeography of the grass Brachypodium sylvaticum.",
+      "title": "A Palearctic divide, niche conservatism and host-fungal endophyte interactions shaped the phylogeography of the grass Brachypodium sylvaticum",
+      "journal": "Plant Diversity",
+      "date": "2026-05",
+      "screened": "2026-09-16"
+    },
     "10.1016/j.psj.2026.107231": {
       "decision": "reject",
       "reason": "Mitochondrial lineages of the poultry red mite on Tunisian layer farms, a non-human study.",
@@ -119,6 +343,22 @@
       "journal": "Poultry Science",
       "date": "2026-09",
       "screened": "2026-09-10"
+    },
+    "10.1016/j.vetpar.2026.110750": {
+      "decision": "reject",
+      "reason": "Non-human: phylogeography of the tick Hyalomma scupense.",
+      "title": "Genetic diversity and phylogeography of Hyalomma scupense, the main vector of tropical theileriosis: Global analysis with novel data from Tunisia",
+      "journal": "Veterinary Parasitology",
+      "date": "2026-05",
+      "screened": "2026-09-16"
+    },
+    "10.1016/j.xhgg.2025.100530": {
+      "decision": "reject",
+      "reason": "A software tool for inferring population structure, not a study of any population's history.",
+      "title": "GrafAnc: Reliable and reproducible inference of continental and regional population structure",
+      "journal": "Human Genetics and Genomics Advances",
+      "date": "2026-01",
+      "screened": "2026-09-16"
     },
     "10.1016/j.ympev.2026.108694": {
       "decision": "reject",
@@ -136,6 +376,30 @@
       "date": "2026-08-10",
       "screened": "2026-09-10"
     },
+    "10.1038/s41371-026-01119-8": {
+      "decision": "reject",
+      "reason": "Clinical cardiovascular study of carotid wall thickness in young African adults.",
+      "title": "Hemodynamic factors primarily impact on carotid IMT in young adults of African Ancestry in Sub-Saharan Africa",
+      "journal": "Journal of Human Hypertension",
+      "date": "2026-02-07",
+      "screened": "2026-09-16"
+    },
+    "10.1038/s41371-026-01121-0": {
+      "decision": "reject",
+      "reason": "Pharmacogenetics of antihypertensive drug response in African populations.",
+      "title": "Hypertension pharmacogenetics and limitations in Africa – a focus on the ACE, AGTR1 and CYP2C9 genes",
+      "journal": "Journal of Human Hypertension",
+      "date": "2026-02-21",
+      "screened": "2026-09-16"
+    },
+    "10.1038/s41467-026-68820-7": {
+      "decision": "reject",
+      "reason": "A genetic reference panel for the Quebec population, with no North African finding.",
+      "title": "A multi-ancestry genetic reference for the Quebec population",
+      "journal": "Nature Communications",
+      "date": "2026-02-03",
+      "screened": "2026-09-16"
+    },
     "10.1038/s41585-026-01157-4": {
       "decision": "reject",
       "reason": "Review of epigenetic drivers of prostate cancer disparities, a clinical study.",
@@ -143,6 +407,30 @@
       "journal": "Nature Reviews Urology",
       "date": "2026-06-05",
       "screened": "2026-09-10"
+    },
+    "10.1038/s41598-025-15640-2": {
+      "decision": "reject",
+      "reason": "Non-human: genetic diversity of Ixodes ricinus tick populations.",
+      "title": "Genome-wide insights into genetic diversity of endemic and non-endemic Ixodes ricinus populations",
+      "journal": "Scientific Reports",
+      "date": "2025-10-01",
+      "screened": "2026-09-16"
+    },
+    "10.1038/s41598-026-45528-8": {
+      "decision": "reject",
+      "reason": "Non-human: mitochondrial introgression between Ruppell's fox and red fox.",
+      "title": "Multiple introgression events from ghost Rüppell’s fox mitochondrial lineages into red fox",
+      "journal": "Scientific Reports",
+      "date": "2026-03-28",
+      "screened": "2026-09-16"
+    },
+    "10.1038/s41598-026-46188-4": {
+      "decision": "reject",
+      "reason": "Non-human: haplotype analysis of the canine parasite Babesia gibsoni.",
+      "title": "Genetic diversity, population structure and haplotype analysis of Babesia gibsoni based on the thrombospondin-related adhesive protein (TRAP) gene",
+      "journal": "Scientific Reports",
+      "date": "2026-04-11",
+      "screened": "2026-09-16"
     },
     "10.1038/s41598-026-66124-w": {
       "decision": "reject",
@@ -159,6 +447,14 @@
       "journal": "Communications Biology",
       "date": "2026-06-03",
       "screened": "2026-09-10"
+    },
+    "10.1073/pnas.2516263123": {
+      "decision": "accept",
+      "reason": "Whole-genome study of 125 Sudanese people reporting deep structure from Nilo-Saharan, West Eurasian, Northern African and Western African ancestry, plus signatures of the Arab expansion.",
+      "title": "Sudan’s complex genetic admixture history drives adaptation to malaria in Sudanese Copts",
+      "journal": "Proceedings of the National Academy of Sciences",
+      "date": "2026-01-06",
+      "screened": "2026-09-16"
     },
     "10.1093/aob/mcaf209": {
       "decision": "reject",
@@ -184,6 +480,14 @@
       "date": "2026-05-20",
       "screened": "2026-09-10"
     },
+    "10.1093/g3journal/jkaf267": {
+      "decision": "reject",
+      "reason": "Non-human: population structure of the soybean rust fungus in the United States.",
+      "title": "Population structure and genetic diversity of Phakopsora pachyrhizi in the Southeastern United States",
+      "journal": "G3: Genes, Genomes, Genetics",
+      "date": "2025-12-08",
+      "screened": "2026-09-16"
+    },
     "10.1093/g3journal/jkag114": {
       "decision": "reject",
       "reason": "Demographic inference method demonstrated on Anopheles mosquito populations, a non-human study.",
@@ -199,6 +503,38 @@
       "journal": "Human Molecular Genetics",
       "date": "2026-06-09",
       "screened": "2026-09-10"
+    },
+    "10.1093/infdis/jiaf437": {
+      "decision": "reject",
+      "reason": "Pathogen genomics: population structure of Escherichia coli in northern Tanzania.",
+      "title": "Population Structure of Escherichia coli Isolated From the Human Bloodstream, Human and Animal Feces, and the Environment in Northern Tanzania",
+      "journal": "The Journal of Infectious Diseases",
+      "date": "2025-08-19",
+      "screened": "2026-09-16"
+    },
+    "10.1093/infdis/jiaf485": {
+      "decision": "reject",
+      "reason": "Pathogen genomics: Leishmania tropica transmission in Moroccan patients.",
+      "title": "Genome Sequencing of Leishmania tropica in Tissues of Moroccan Patients Reveals Microfocal Transmission Underlain by (Pseudo)Clonal and Sexual Reproduction",
+      "journal": "The Journal of Infectious Diseases",
+      "date": "2025-09-17",
+      "screened": "2026-09-16"
+    },
+    "10.1093/jee/toaf347": {
+      "decision": "reject",
+      "reason": "Non-human: strain identification of fall armyworm in Egypt.",
+      "title": "Identification and genetic characterization of Spodoptera frugiperda (Lepidoptera: Noctuidae) corn and rice strains in Egypt utilizing Tpi gene and microsatellite marker",
+      "journal": "Journal of Economic Entomology",
+      "date": "2026-01-09",
+      "screened": "2026-09-16"
+    },
+    "10.1093/jnci/djaf213": {
+      "decision": "reject",
+      "reason": "Clinical cohort study of breast cancer survival in sub-Saharan Africa.",
+      "title": "Survival deficits in young women with breast cancer in sub-Saharan Africa: the African Breast Cancer–Disparities in Outcomes cohort",
+      "journal": "JNCI: Journal of the National Cancer Institute",
+      "date": "2025-08-07",
+      "screened": "2026-09-16"
     },
     "10.1093/pnasnexus/pgag234": {
       "decision": "reject",
@@ -216,6 +552,30 @@
       "date": "2026-07-16",
       "screened": "2026-09-10"
     },
+    "10.1096/fj.202502634r": {
+      "decision": "accept",
+      "reason": "Whole-genome sequencing in Galicia finds a 13.5% to 16.5% North African and Middle Eastern ancestry component, male-biased and likely introduced before the Islamic conquest.",
+      "title": "Whole‐Genome Sequencing in Galicia Reveals Male‐Biased Pre‐Islamic North African Ancestry, Subtle Population Structure, and Microgeographic Patterns of Disease Risk",
+      "journal": "The FASEB Journal",
+      "date": "2025-12-13",
+      "screened": "2026-09-16"
+    },
+    "10.1097/ms9.0000000000004195": {
+      "decision": "reject",
+      "reason": "A health equity commentary on access to sickle cell disease care.",
+      "title": "Health equity in sickle cell disease: overcoming barriers to care in marginalized communities",
+      "journal": "Annals of Medicine & Surgery",
+      "date": "2025-10-28",
+      "screened": "2026-09-16"
+    },
+    "10.1098/rspb.2025.1416": {
+      "decision": "reject",
+      "reason": "Non-human: genome divergence between European anchovy ecotypes.",
+      "title": "Genome divergence between European anchovy ecotypes fuelled by structural variants originating from trans-equatorial admixture",
+      "journal": "Proceedings of the Royal Society B: Biological Sciences",
+      "date": "2025-11-05",
+      "screened": "2026-09-16"
+    },
     "10.1099/mgen.0.001788": {
       "decision": "reject",
       "reason": "Genomics of Salmonella bloodstream infection in malnourished children in Niger, a pathogen study.",
@@ -223,6 +583,14 @@
       "journal": "Microbial Genomics",
       "date": "2026-07-20",
       "screened": "2026-09-10"
+    },
+    "10.1111/1749-4877.70071": {
+      "decision": "reject",
+      "reason": "Non-human: environmental adaptation in African goat populations.",
+      "title": "Genomic Investigations Unveil the Genetic Underpinnings of Environmental Adaptation in African Goat Populations",
+      "journal": "Integrative Zoology",
+      "date": "2026-02-12",
+      "screened": "2026-09-16"
     },
     "10.1111/ahg.70050": {
       "decision": "reject",
@@ -232,6 +600,22 @@
       "date": "2026-07-26",
       "screened": "2026-09-10"
     },
+    "10.1111/eva.70188": {
+      "decision": "reject",
+      "reason": "Non-human: population structure of the silvery lightfish.",
+      "title": "Genetics in the Ocean's Twilight Zone: Population Structure of the Silvery Lightfish Across Its Distribution Range",
+      "journal": "Evolutionary Applications",
+      "date": "2026-03-23",
+      "screened": "2026-09-16"
+    },
+    "10.1111/eva.70204": {
+      "decision": "reject",
+      "reason": "Non-human: genetic diversity of farmed and wild African catfish in Nigeria.",
+      "title": "Genetic Diversity, Population Structure and Differentiation of Farmed and Wild African Catfish ( Clarias gariepinus ) in Nigeria",
+      "journal": "Evolutionary Applications",
+      "date": "2026-01-30",
+      "screened": "2026-09-16"
+    },
     "10.1111/eva.70274": {
       "decision": "reject",
       "reason": "Candidate genes for trypanotolerance in hybrid African cattle, a non-human study.",
@@ -239,6 +623,14 @@
       "journal": "Evolutionary Applications",
       "date": "2026-05-31",
       "screened": "2026-09-10"
+    },
+    "10.1111/mec.70176": {
+      "decision": "reject",
+      "reason": "Non-human: genomics of the invasive Sahara mustard plant.",
+      "title": "Human‐Mediated Dispersal Routes Structure Sahara Mustard Genomics",
+      "journal": "Molecular Ecology",
+      "date": "2025-11-18",
+      "screened": "2026-09-16"
     },
     "10.1111/mec.70461": {
       "decision": "reject",
@@ -256,6 +648,46 @@
       "date": "2026-08-13",
       "screened": "2026-09-10"
     },
+    "10.1111/mve.70020": {
+      "decision": "reject",
+      "reason": "Non-human: distinguishing two blowfly species in northwest Africa.",
+      "title": "Assessment of the cox 1 mitochondrial DNA and 28S ribosomal RNA genes for distinguishing newly recorded Lucilia cuprina Wiedemann and the established Lucilia sericata Meigen (Diptera: Calliphoridae) in Northwest Africa",
+      "journal": "Medical and Veterinary Entomology",
+      "date": "2025-11-01",
+      "screened": "2026-09-16"
+    },
+    "10.1126/sciadv.aea2316": {
+      "decision": "reject",
+      "reason": "Models malaria transmission risk against the human niche in sub-Saharan Africa using mosquito distribution and palaeoclimate data, yielding no North African genetic finding.",
+      "title": "Malaria shaped human spatial organization for the past 74 thousand years",
+      "journal": "Science Advances",
+      "date": "2026-04-24",
+      "screened": "2026-09-16"
+    },
+    "10.1128/msphere.00596-25": {
+      "decision": "reject",
+      "reason": "Non-human: a laboratory expression system for the parasite Trypanosoma brucei.",
+      "title": "A trypanosome trifecta: an independently tunable triple inducible system for genetic studies in Trypanosoma brucei",
+      "journal": "mSphere",
+      "date": "2026-04-28",
+      "screened": "2026-09-16"
+    },
+    "10.1152/physiolgenomics.00268.2025": {
+      "decision": "reject",
+      "reason": "Trait-association study of lactose digestion in African populations.",
+      "title": "Genetic and environmental factors associated with lactose digestion in African populations",
+      "journal": "Physiological Genomics",
+      "date": "2026-01-01",
+      "screened": "2026-09-16"
+    },
+    "10.1155/ijhy/8287621": {
+      "decision": "reject",
+      "reason": "Disease genetics linking the Rac1 promoter to antihypertensive drug resistance and malaria susceptibility.",
+      "title": "The Rac1 Promoter as a Molecular Nexus for Antihypertensive Therapy Resistance and Enhanced Malaria Susceptibility",
+      "journal": "International Journal of Hypertension",
+      "date": "2026-04-21",
+      "screened": "2026-09-16"
+    },
     "10.1155/japr/7708566": {
       "decision": "reject",
       "reason": "Meta-analysis of insecticide-resistance gene expression in Anopheles mosquitoes, a non-human study.",
@@ -264,6 +696,22 @@
       "date": "2026-05-30",
       "screened": "2026-09-10"
     },
+    "10.11646/zootaxa.5725.2.5": {
+      "decision": "reject",
+      "reason": "Non-human: species delimitation in Afro-Arabian bees.",
+      "title": "Molecular evidence supports the recognition of two distinct species within Anthidium minimum Pasteels, 1969, from the Afro-Arabian zoogeographic region (Hymenoptera: Megachilidae)",
+      "journal": "Zootaxa",
+      "date": "2025-12-02",
+      "screened": "2026-09-16"
+    },
+    "10.1177/13872877261416066": {
+      "decision": "reject",
+      "reason": "A qualitative study of researchers' experiences recruiting dementia patients for genetic studies, not a population genetics result.",
+      "title": "Recruiting and retaining persons with suspected Alzheimer's disease and related dementias for genetic studies in selected African countries: Lived realities of researchers",
+      "journal": "Journal of Alzheimer’s Disease",
+      "date": "2026-02-09",
+      "screened": "2026-09-16"
+    },
     "10.1177/15303667261486635": {
       "decision": "reject",
       "reason": "A non-human entomology study using mitochondrial markers to identify what vertebrates Mansonia mosquitoes in Kenya feed on, not human population history.",
@@ -271,6 +719,14 @@
       "journal": "Vector-Borne and Zoonotic Diseases",
       "date": "2026-09-11",
       "screened": "2026-09-14"
+    },
+    "10.1186/s12263-026-00801-3": {
+      "decision": "reject",
+      "reason": "Trait-association genetics on SLC39A10 variants, cellular zinc handling and health outcomes.",
+      "title": "African-enriched SLC39A10 (ZIP10) missense variants differentially affect cellular zinc homeostasis and associate with health-related traits",
+      "journal": "Genes & Nutrition",
+      "date": "2026-04-11",
+      "screened": "2026-09-16"
     },
     "10.1186/s12711-026-01074-5": {
       "decision": "reject",
@@ -288,6 +744,14 @@
       "date": "2026-07-08",
       "screened": "2026-09-10"
     },
+    "10.1186/s12864-025-12232-2": {
+      "decision": "reject",
+      "reason": "Non-human: genetic diversity of Mediterranean durum wheat accessions.",
+      "title": "Genetic diversity and population structure of a core collection of Mediterranean durum wheat accessions using DArTseq markers",
+      "journal": "BMC Genomics",
+      "date": "2025-11-22",
+      "screened": "2026-09-16"
+    },
     "10.1186/s12864-026-13162-3": {
       "decision": "reject",
       "reason": "Diversity of sorghum crop accessions and wide crosses, a plant study.",
@@ -296,6 +760,86 @@
       "date": "2026-07-16",
       "screened": "2026-09-10"
     },
+    "10.1186/s12870-025-07935-3": {
+      "decision": "reject",
+      "reason": "Non-human: yam genetic diversity for conservation and breeding.",
+      "title": "Yam genetic diversity in Sub-Saharan Africa: implications for conservation and breeding",
+      "journal": "BMC Plant Biology",
+      "date": "2026-01-03",
+      "screened": "2026-09-16"
+    },
+    "10.1186/s12884-026-09131-z": {
+      "decision": "reject",
+      "reason": "Clinical cohort study of kidney function after pre-eclampsia in Uganda.",
+      "title": "Abnormal renal function three months after delivery among pre-eclampsia survivors in Sub-Saharan Africa: a prospective cohort study in Uganda",
+      "journal": "BMC Pregnancy and Childbirth",
+      "date": "2026-04-22",
+      "screened": "2026-09-16"
+    },
+    "10.1186/s12915-025-02394-6": {
+      "decision": "reject",
+      "reason": "Non-human: conservation genomics of a threatened island gecko.",
+      "title": "Genomic identification of conservation areas amid lineage divergence and admixture in a threatened island gecko",
+      "journal": "BMC Biology",
+      "date": "2025-10-22",
+      "screened": "2026-09-16"
+    },
+    "10.1186/s12917-026-05356-4": {
+      "decision": "reject",
+      "reason": "Non-human: phylogeny of the dog louse fly in India.",
+      "title": "Insight into molecular phylogeny and haplotype diversity of the dog louse fly (Hippobosca longipennis) in India",
+      "journal": "BMC Veterinary Research",
+      "date": "2026-02-07",
+      "screened": "2026-09-16"
+    },
+    "10.1186/s12936-025-05768-x": {
+      "decision": "reject",
+      "reason": "Non-human: population structure of Anopheles mosquitoes in Uganda.",
+      "title": "Assessing the population genetic structure and demographic history of Anopheles gambiae and Anopheles arabiensis at island and mainland sites in Uganda: implications for testing novel malaria vector control approaches",
+      "journal": "Malaria Journal",
+      "date": "2026-01-20",
+      "screened": "2026-09-16"
+    },
+    "10.1186/s13071-025-06927-4": {
+      "decision": "reject",
+      "reason": "Non-human: phylogeography of Hyalomma marginatum ticks around the Mediterranean.",
+      "title": "Tracking invasion events: phylogeography of Hyalomma marginatum in the Mediterranean basin with a focus on Southern France",
+      "journal": "Parasites & Vectors",
+      "date": "2025-10-14",
+      "screened": "2026-09-16"
+    },
+    "10.1186/s13071-026-07261-z": {
+      "decision": "reject",
+      "reason": "Non-human: genetic diversity of sandfly populations in the western Mediterranean.",
+      "title": "Genetic diversity of Phlebotomus perniciosus populations between insular and mainland regions in the leishmaniasis-endemic western Mediterranean area",
+      "journal": "Parasites & Vectors",
+      "date": "2026-01-22",
+      "screened": "2026-09-16"
+    },
+    "10.1186/s40246-025-00819-5": {
+      "decision": "reject",
+      "reason": "Clinical genetics of a pathogenic founder variant in OTOF causing hearing loss.",
+      "title": "A multicenter study reveals a novel pathogenic splice-site founder variant in OTOF",
+      "journal": "Human Genomics",
+      "date": "2025-10-06",
+      "screened": "2026-09-16"
+    },
+    "10.1186/s40246-025-00885-9": {
+      "decision": "reject",
+      "reason": "Trait-association work explaining variation in male height, not migration or ancestry history.",
+      "title": "Autosomal ancestry and male founder events explain variation in male height across 60 Caucasian populations",
+      "journal": "Human Genomics",
+      "date": "2026-02-06",
+      "screened": "2026-09-16"
+    },
+    "10.1186/s40851-025-00254-3": {
+      "decision": "reject",
+      "reason": "Non-human: two new nematode species in the Mediterranean Basin.",
+      "title": "Integrative taxonomy of the genus Longidorus (Nematoda: Longidoridae) reveals two new species in the Mediterranean Basin",
+      "journal": "Zoological Letters",
+      "date": "2025-11-07",
+      "screened": "2026-09-16"
+    },
     "10.1186/s43046-026-00385-4": {
       "decision": "reject",
       "reason": "Narrative review proposing a roadmap for immune-organoid research in Africa, with no population-genetic analysis.",
@@ -303,6 +847,14 @@
       "journal": "Journal of the Egyptian National Cancer Institute",
       "date": "2026-07-15",
       "screened": "2026-09-10"
+    },
+    "10.1371/journal.pgen.1011928": {
+      "decision": "reject",
+      "reason": "Trait-association genetics of zinc homeostasis and cardiometabolic disease.",
+      "title": "Genetic determinants of zinc homeostasis and its role in cardiometabolic diseases",
+      "journal": "PLOS Genetics",
+      "date": "2025-12-01",
+      "screened": "2026-09-16"
     },
     "10.1371/journal.pntd.0013113": {
       "decision": "reject",
@@ -328,6 +880,30 @@
       "date": "2026-06-04",
       "screened": "2026-09-10"
     },
+    "10.1371/journal.pone.0333547": {
+      "decision": "reject",
+      "reason": "Clinical review of ABO blood groups and cardiovascular disease risk.",
+      "title": "ABO blood groups and cardiovascular disease and its risk in continental Africans and people of African ancestry: A systematic review",
+      "journal": "PLOS One",
+      "date": "2025-10-22",
+      "screened": "2026-09-16"
+    },
+    "10.1371/journal.pone.0340368": {
+      "decision": "reject",
+      "reason": "Non-human: genetic diversity of Ethiopian Urochloa forage grass.",
+      "title": "Genetic diversity and population structure in Ethiopian Urochloa brizantha genotypes uncovered using inter simple sequence repeat (ISSR) markers",
+      "journal": "PLOS One",
+      "date": "2026-01-08",
+      "screened": "2026-09-16"
+    },
+    "10.1371/journal.pone.0346906": {
+      "decision": "reject",
+      "reason": "Non-human: hybridisation between bush pigs and domestic pigs.",
+      "title": "Genomic analysis of putative hybrids between Potamochoerus spp. and domestic pigs from sympatric areas in West Africa and Madagascar",
+      "journal": "PLOS One",
+      "date": "2026-04-21",
+      "screened": "2026-09-16"
+    },
     "10.1371/journal.pone.0350298": {
       "decision": "accept",
       "reason": "Ancient genomes from medieval Sicily showing substantial North African ancestry in individuals buried before the Islamic conquest.",
@@ -336,6 +912,38 @@
       "date": "2026-06-24",
       "screened": "2026-09-10"
     },
+    "10.1590/1678-4685-gmb-2024-0147": {
+      "decision": "reject",
+      "reason": "Clinical genetics of TSHR polymorphisms in congenital hypothyroidism patients.",
+      "title": "Is there are relationship between polymorphisms TSHR gene frequencies and genetic ancestry markers in patients with Primary Congenital Hypothyroidism?",
+      "journal": "Genetics and Molecular Biology",
+      "date": "2025",
+      "screened": "2026-09-16"
+    },
+    "10.3389/fepid.2026.1765215": {
+      "decision": "reject",
+      "reason": "A clinical review of vitamin D, fatty liver disease and type 2 diabetes.",
+      "title": "Vitamin D and the metabolic-associated steatotic liver disease—type 2 diabetes axis: a scoping-narrative review of global evidence and emerging perspectives for Sub-Saharan Africa",
+      "journal": "Frontiers in Epidemiology",
+      "date": "2026-03-11",
+      "screened": "2026-09-16"
+    },
+    "10.3389/finsc.2026.1806215": {
+      "decision": "reject",
+      "reason": "Non-human: population genetics of the African sugarcane stalk borer moth in Tanzania.",
+      "title": "Population genetic structure of the African sugarcane stalk borer (Eldana saccharina Walker, Lepidoptera: Pyralidae) in Tanzania",
+      "journal": "Frontiers in Insect Science",
+      "date": "2026-05-04",
+      "screened": "2026-09-16"
+    },
+    "10.3389/fonc.2026.1898542": {
+      "decision": "reject",
+      "reason": "A clinical oncology review of breast cancer genomics in MENA and Saudi cohorts, aimed at precision treatment rather than population history.",
+      "title": "Genomic and epigenomic diversity of breast cancer across Western and MENA populations: implications for precision oncology",
+      "journal": "Frontiers in Oncology",
+      "date": "2026-08-27",
+      "screened": "2026-09-16"
+    },
     "10.3389/fphar.2026.1872557": {
       "decision": "reject",
       "reason": "Pharmacogenomic meta-analysis of drug-induced neutropenia in breast cancer patients.",
@@ -343,6 +951,38 @@
       "journal": "Frontiers in Pharmacology",
       "date": "2026-08-25",
       "screened": "2026-09-10"
+    },
+    "10.3389/fpls.2025.1650532": {
+      "decision": "reject",
+      "reason": "Non-human: genomics of the rice blast fungus in sub-Saharan Africa.",
+      "title": "Genomic profiles of Pyricularia oryzae in Sub-Saharan Africa: exploring population differences and their evolutionary implications in the region",
+      "journal": "Frontiers in Plant Science",
+      "date": "2025-10-06",
+      "screened": "2026-09-16"
+    },
+    "10.3390/ani16081236": {
+      "decision": "reject",
+      "reason": "Non-human: population genetics and species delimitation of Tunisian hares.",
+      "title": "Coats of Variable Hue in Tunisian Hares (Genus Lepus): Population Genetics and Mitochondrial Phylogenetics for Species Delimitation",
+      "journal": "Animals",
+      "date": "2026-04-17",
+      "screened": "2026-09-16"
+    },
+    "10.3390/antibiotics15040349": {
+      "decision": "reject",
+      "reason": "Pathogen genomics: Klebsiella pneumoniae isolates across the Middle East and North Africa.",
+      "title": "Genomic Epidemiology of Clinical Klebsiella pneumoniae in the Middle East and North Africa",
+      "journal": "Antibiotics",
+      "date": "2026-03-29",
+      "screened": "2026-09-16"
+    },
+    "10.3390/biology15040353": {
+      "decision": "reject",
+      "reason": "Non-human: population structure of the invasive blue crab in a Moroccan estuary.",
+      "title": "Population Structure and Growth Dynamics of the Invasive Blue Crab Callinectes sapidus in the Loukkos Estuary (Morocco)",
+      "journal": "Biology",
+      "date": "2026-02-18",
+      "screened": "2026-09-16"
     },
     "10.3390/bs16081449": {
       "decision": "reject",
@@ -359,6 +999,62 @@
       "journal": "Cancers",
       "date": "2026-07-30",
       "screened": "2026-09-10"
+    },
+    "10.3390/genes16121403": {
+      "decision": "reject",
+      "reason": "A cancer biology argument for sub-Saharan African cell line models, not population history.",
+      "title": "Addressing Ancestral Underrepresentation in Oncobiology: The Need for Sub-Saharan African-Specific In Vitro Models",
+      "journal": "Genes",
+      "date": "2025-11-24",
+      "screened": "2026-09-16"
+    },
+    "10.3390/genes17010101": {
+      "decision": "reject",
+      "reason": "A forensic Y-STR database study of northern Portugal, reporting forensic parameters rather than population history.",
+      "title": "Population of Northern Portugal: Study of Genetic Diversity and Forensic Parameters of 26 Y-STR Markers",
+      "journal": "Genes",
+      "date": "2026-01-19",
+      "screened": "2026-09-16"
+    },
+    "10.3390/genes17010111": {
+      "decision": "reject",
+      "reason": "Non-human: mitochondrial variation in the striped hyena in Algeria.",
+      "title": "Mitochondrial DNA Variation of the Striped Hyena (Hyaena hyaena) in Algeria and Further Insights into the Species’ Evolutionary History",
+      "journal": "Genes",
+      "date": "2026-01-20",
+      "screened": "2026-09-16"
+    },
+    "10.3390/insects16121198": {
+      "decision": "reject",
+      "reason": "Non-human: relatedness of outdoor-biting Anopheles mosquitoes in Zambia.",
+      "title": "Mapping the Genetic Relatedness of Outdoor-Biting Anopheles Mosquitoes in Zambia",
+      "journal": "Insects",
+      "date": "2025-11-25",
+      "screened": "2026-09-16"
+    },
+    "10.3390/jcm14197107": {
+      "decision": "reject",
+      "reason": "A clinical review of cardiac adaptations in athletes and racial categorisation in sports medicine.",
+      "title": "Beyond Racial Categorization in Sports Cardiology: A Systematic Review of Cardiac Adaptations in Athletes",
+      "journal": "Journal of Clinical Medicine",
+      "date": "2025-10-09",
+      "screened": "2026-09-16"
+    },
+    "10.3390/life15121925": {
+      "decision": "reject",
+      "reason": "Non-human: microsatellite characterisation of Arabian horses in Tunisia.",
+      "title": "Genetic Characterization of the Arabian Horse Population in Tunisia Using Microsatellites",
+      "journal": "Life",
+      "date": "2025-12-16",
+      "screened": "2026-09-16"
+    },
+    "10.3390/vaccines14010027": {
+      "decision": "reject",
+      "reason": "Pathogen genomics: vaccine-driven shifts in pneumococcal strains in Tunisia.",
+      "title": "Genomic Surveillance Reveals Vaccine-Associated Shifts in Pediatric Invasive Streptococcus pneumoniae in Tunisia",
+      "journal": "Vaccines",
+      "date": "2025-12-25",
+      "screened": "2026-09-16"
     },
     "10.3892/mi.2026.325": {
       "decision": "reject",
@@ -407,6 +1103,30 @@
       "journal": "Global Heart",
       "date": "2026-08-21",
       "screened": "2026-09-10"
+    },
+    "10.5653/cerm.2025.08627": {
+      "decision": "reject",
+      "reason": "Clinical study of AZFc copy number variations in infertile Moroccan men.",
+      "title": "Prevalence and spectrum of AZFc copy number variations in infertile Moroccan men",
+      "journal": "Clinical and Experimental Reproductive Medicine",
+      "date": "2026-05-08",
+      "screened": "2026-09-16"
+    },
+    "10.62438/tunismed.v104i01.6262": {
+      "decision": "reject",
+      "reason": "Clinical survey of chromosomal abnormalities in infertile Tunisian men.",
+      "title": "Prevalence and Spectrum of Chromosomal Abnormalities in 1366 Infertile Tunisian Men: A retrospective observational study",
+      "journal": "La Tunisie Médicale",
+      "date": "2026-03-10",
+      "screened": "2026-09-16"
+    },
+    "10.7717/peerj.20620": {
+      "decision": "reject",
+      "reason": "Non-human: taxonomic revision of Palearctic geometrid moths.",
+      "title": "Quantitative image analysis applied to revise the taxonomy of the Palearctic Earophila badiata species group (Lepidoptera: Geometridae: Larentiinae)",
+      "journal": "PeerJ",
+      "date": "2026-02-19",
+      "screened": "2026-09-16"
     }
   }
 }
