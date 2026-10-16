@@ -17,9 +17,11 @@ northafricanorigins.com/
 ├── genetics.html          # DNA science and methodology
 ├── culture.html           # Cultural heritage and traditions
 ├── contact.html           # Contact information
+├── privacy.html           # Privacy and cookies (also fr/, ar/)
 ├── css/
 │   └── styles.css        # Main stylesheet
-├── js/                   # JavaScript files (if any)
+├── js/
+│   └── consent.js        # Cookie question; Google Analytics only after Accept
 ├── img/                  # Images and assets
 ├── docs/                 # Documentation files
 ├── robots.txt            # SEO crawler instructions

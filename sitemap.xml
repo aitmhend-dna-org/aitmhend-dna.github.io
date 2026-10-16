@@ -154,6 +154,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://northafricanorigins.com/privacy.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://northafricanorigins.com/research/canary-islands-amazigh-history-2025.html</loc>
     <lastmod>2026-09-16</lastmod>
     <changefreq>yearly</changefreq>
@@ -184,6 +190,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://northafricanorigins.com/fr/privacy.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://northafricanorigins.com/ar/</loc>
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
@@ -200,6 +212,12 @@
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://northafricanorigins.com/ar/privacy.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <!-- Research Article: A shared selection signal links Canary Islanders and North Africa -->
   <url>

@@ -15,15 +15,18 @@ This is a **no-build static site** — plain HTML, CSS, and vanilla JS. No packa
 - **Edit and preview directly** — open any `.html` file in a browser
 - **Deployment** — automatic via GitHub Pages from main branch
 - **External deps (CDN only):** Google Fonts (Bricolage Grotesque, Instrument Sans, IBM Plex Mono, Noto Sans Tifinagh; Noto Sans Arabic and Noto Kufi Arabic on the `ar/` pages). No JavaScript libraries
+- **Google Analytics 4** (`G-ZVDSQHZ2Q2`), loaded by `js/consent.js` only after the reader accepts the cookie question — see Analytics and consent in `DESIGN.md`
 - **Contact form:** Formspree (ID: myzbzgjn)
 
 ## Architecture
 
 - `index.html`, `lineage.html`, `genetics.html`, `culture.html`, `research.html`, `contact.html`,
   `start-here.html`, `glossary.html`, `maps-sites.html`, `limitations.html` — the site pages
-- `fr/` and `ar/` — French and Arabic translations of `index.html`, `lineage.html` and `limitations.html`, linked by reciprocal `hreflang` (`ar/` is right-to-left). Change a translated page's English original and its counterparts together
+- `privacy.html` — what Google Analytics counts once the reader accepts, and how to withdraw
+- `fr/` and `ar/` — French and Arabic translations of `index.html`, `lineage.html`, `limitations.html` and `privacy.html`, linked by reciprocal `hreflang` (`ar/` is right-to-left). Change a translated page's English original and its counterparts together
 - `research/*.html` — one summary per paper listed on `research.html` (the scout adds new ones)
-- `css/main.css` — the only stylesheet (see `DESIGN.md`). There is no shared JavaScript file
+- `css/main.css` — the only stylesheet (see `DESIGN.md`)
+- `js/consent.js` — the only shared script: the cookie question in EN/FR/AR and Google Analytics behind it. Every page loads it with `defer` and `data-ga="G-ZVDSQHZ2Q2"`; add that line to any new page
 - `img/` — `og-card.jpg` for social, the logo mark, and older WebP imagery. Pages use authored inline SVG diagrams instead of photographs — see the Imagery section of `DESIGN.md`
 - `docs/` — research notes and SEO documentation
 - `.github/research-scout/` + `.github/workflows/research-scout.yml` — the weekly research scout, which adds new papers to `research.html` and `research/` on its own. Its page template and count-sync logic live in `scout.py`; if you change the article layout or the "All N summaries" wording, change them there too, or `scout.py validate` will fail the next run. See its `README.md`
