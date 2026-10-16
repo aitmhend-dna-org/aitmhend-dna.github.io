@@ -170,6 +170,24 @@ Noto Sans Tifinagh, in `--yaz` on paper or white on colour.
 - Every page: skip link → header → nav → breadcrumb (not on the homepage) → `<main>` → footer.
 - One footer everywhere.
 
+## Analytics and consent
+
+Google Analytics 4 (measurement ID `G-ZVDSQHZ2Q2`, stream "North African Origins web") loads
+**only after the reader accepts**, using Google's basic consent mode. Before that, nothing is
+requested from Google Analytics and no cookie is set.
+
+- Every page except the redirect stub loads `js/consent.js` with `defer` right after the
+  stylesheet, carrying the ID: `<script defer src="js/consent.js" data-ga="G-ZVDSQHZ2Q2">`
+  (`../js/` from `fr/`, `ar/` and `research/`, `/js/` on `404.html`). A new page needs the same
+  line; the research scout gets it for free because it builds on an existing article.
+- On Accept: ad storage, ad user data and ad personalisation stay denied, Google signals are
+  off, and the `_ga` cookies are host-only (`cookie_domain: "none"`) and last 13 months.
+- The answer is kept in `localStorage` (`nao-consent`) for six months, then asked again.
+  Refuse, or withdrawing later, turns the tag off and deletes the `_ga*` cookies.
+- The question's text lives in the script, in English, French and Arabic, picked from
+  `<html lang>`. The privacy page (`privacy.html`, `fr/privacy.html`, `ar/privacy.html`) says
+  what is counted and how to withdraw; if the tag's settings change, change it too.
+
 ## Layout
 
 - Container max-width 1180px; full-bleed colour bands break out of it, their content does not.
@@ -197,6 +215,13 @@ Only these exist. Do not invent variants without adding them here.
   fails 4.5:1 against `--yaz`.
 - `.note` — the honesty callout: what the evidence does not support.
 - `.page-title`, `.page-updated`, `.sourcing-note`.
+- `.consent` — the cookie question, built by `js/consent.js` only while Google Analytics has
+  no answer (or the reader reopens it). Fixed along the bottom on a `.stripe`, paper ground,
+  never modal, never takes focus by itself. Refuse and Accept are the same `.btn`, same size,
+  side by side — neither is the "default". The body is padded by the banner's height so the
+  footer is never hidden under it. Logical properties only, so it mirrors on `ar/` pages.
+- `.site-footer__cookies` — the footer button that reopens the cookie question. A `<button>`
+  styled like its neighbouring links, hidden until the script runs.
 - `.langs` — the language switcher. Page-aware: on a page that has a translation it links to
   the exact equivalent, elsewhere to that language's home. This is the one part of the chrome
   that legitimately differs per page, like `aria-current`.

@@ -144,6 +144,12 @@ p { margin: 0 0 1em; }
     white-space: nowrap;
 }
 
+/* Other identifiers set in running text, such as a cookie name. */
+code {
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+}
+
 .yaz-mark {
     font-family: var(--font-tifinagh);
     line-height: 1;
@@ -332,6 +338,25 @@ p { margin: 0 0 1em; }
     font-size: var(--t-sm);
     color: rgba(255, 255, 255, 0.75);
 }
+
+/* The way back to the cookie question (js/consent.js). A button, not a link,
+   because it opens the question rather than going anywhere; it looks like its
+   neighbours in the list. */
+.site-footer__cookies {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--on-colour);
+    font: inherit;
+    text-align: start;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.site-footer__cookies:hover { text-decoration-thickness: 2px; }
 
 /* --------------------------------------------------------------------------
    7. Buttons — square, solid, 48px floor
@@ -796,6 +821,7 @@ select:focus-visible {
 .band--ink a:focus-visible,
 .nav a:focus-visible,
 .site-footer a:focus-visible,
+.site-footer button:focus-visible,
 .door:focus-visible {
     outline-color: var(--paper);
 }
@@ -1227,6 +1253,11 @@ select:focus-visible {
 
 [dir="rtl"] .page-updated { display: block; text-align: right; }
 
+[dir="rtl"] code {
+    direction: ltr;
+    unicode-bidi: isolate;
+}
+
 /* The Latin display faces have no Arabic coverage, so an RTL page swaps them.
    Noto Kufi Arabic keeps the geometric poster weight; Noto Sans Arabic reads.
    Plex Mono stays for haplogroups, which are Latin in every language. */
@@ -1261,4 +1292,65 @@ select:focus-visible {
    face renders the Latin run wider, but the hazard is language-independent. */
 p, li, dd, figcaption, .prose, .figure__caption {
     overflow-wrap: break-word;
+}
+
+/* --------------------------------------------------------------------------
+   23. Cookie question
+   Built by js/consent.js, only when Google Analytics has no answer yet or the
+   reader reopens it. Not modal: it sits along the bottom on the woven stripe and
+   the page reads under it, padded by the banner's own height. Refuse and Accept
+   are the same .btn, same size, side by side. Logical properties throughout, so
+   the Arabic pages mirror it with no [dir="rtl"] rule of its own.
+   -------------------------------------------------------------------------- */
+
+.consent {
+    position: fixed;
+    inset-inline: 0;
+    inset-block-end: 0;
+    z-index: 50;
+    background: var(--paper);
+    color: var(--ink);
+}
+
+.consent[hidden] { display: none; }
+
+.consent__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem var(--gap);
+    padding-block: 1rem;
+}
+
+.consent__text {
+    flex: 1 1 34ch;
+    max-width: 68ch;
+    margin: 0;
+    font-size: var(--t-sm);
+}
+
+.consent__choices {
+    display: flex;
+    flex: 0 1 auto;
+    gap: 0.75rem;
+}
+
+.consent__btn {
+    flex: 1 1 0;
+    justify-content: center;
+    min-width: 8.5rem;
+}
+
+.consent__now {
+    flex-basis: 100%;
+    margin: 0;
+    font-size: var(--t-sm);
+    color: var(--ink-quiet);
+}
+
+html.has-consent body { padding-block-end: var(--consent-h, 0px); }
+
+@media (max-width: 559px) {
+    .consent__choices { flex-basis: 100%; }
+    .consent__btn { min-width: 0; }
 }
