@@ -672,6 +672,14 @@
       "date": "2026-08-13",
       "screened": "2026-09-10"
     },
+    "10.1111/mec.70555": {
+      "decision": "reject",
+      "reason": "A non-human study of phylogeographic breaks in the lizard Acanthodactylus erythrurus in south-western Morocco, not human population history.",
+      "title": "Phylogeographic Breaks With and Without Contemporary Barriers to Migration in the Lizard Acanthodactylus erythrurus",
+      "journal": "Molecular Ecology",
+      "date": "2026-10-08",
+      "screened": "2026-10-19"
+    },
     "10.1111/mve.70020": {
       "decision": "reject",
       "reason": "Non-human: distinguishing two blowfly species in northwest Africa.",
@@ -935,6 +943,14 @@
       "journal": "PLOS One",
       "date": "2026-06-24",
       "screened": "2026-09-10"
+    },
+    "10.1371/journal.pone.0358132": {
+      "decision": "reject",
+      "reason": "A pathogen study of Plasmodium falciparum Pfhrp2 diversity for malaria rapid diagnostic tests, not human population history.",
+      "title": "Spatial and genetic dynamics of Plasmodium falciparum histidine-rich protein2 in sub-Saharan Africa",
+      "journal": "PLOS One",
+      "date": "2026-10-07",
+      "screened": "2026-10-19"
     },
     "10.1371/journal.pone.0358751": {
       "decision": "reject",
