@@ -536,6 +536,14 @@
       "date": "2026-05-14",
       "screened": "2026-09-10"
     },
+    "10.1093/g3journal/jkag287": {
+      "decision": "reject",
+      "reason": "A reference genome assembly and selection scan for Ankole cattle, a non-human study with no bearing on human population history in North Africa.",
+      "title": "The chromosome-level annotated reference genome MakAnk1.0 reveals a putative signature of selection for long horns and provides insights into the demographic history of Ankole cattle",
+      "journal": "G3: Genes, Genomes, Genetics",
+      "date": "2026-10-27",
+      "screened": "2026-11-02"
+    },
     "10.1093/hmg/ddag046": {
       "decision": "reject",
       "reason": "Traces the origin of the repeat expansion that causes Friedreich ataxia, a disease-genetics study.",
