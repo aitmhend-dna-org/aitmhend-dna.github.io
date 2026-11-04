@@ -21,7 +21,7 @@ northafricanorigins.com/
 ├── css/
 │   └── styles.css        # Main stylesheet
 ├── js/
-│   └── consent.js        # Cookie question; Google Analytics only after Accept
+│   └── consent.js        # Cloudflare beacon; cookie question; GA only after Accept
 ├── img/                  # Images and assets
 ├── docs/                 # Documentation files
 ├── robots.txt            # SEO crawler instructions

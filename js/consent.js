@@ -10,10 +10,17 @@
 // in localStorage; when that is blocked, nothing is stored and the reader is
 // simply asked again. Without JavaScript there is no question and no counting.
 //
+// Cloudflare Web Analytics (#112) is the other counter: a cookieless beacon
+// that stores nothing in the browser, so this script loads it for every reader,
+// whatever the answer. Not in a browser driven by a program (navigator.webdriver:
+// Playwright, Puppeteer, Selenium), so the site's own browser checks don't count
+// as visits. The token is public: it ends up in every page.
+//
 // Each page loads this file with `defer` and the measurement id in `data-ga`:
 //   <script defer src="js/consent.js" data-ga="G-…"></script>
 (function () {
   var KEY = "nao-consent";
+  var CF_TOKEN = "bc788e54c8b54557824befe6d41b5a0a";
   var MAX_AGE = 182 * 24 * 60 * 60 * 1000;   // about six months
   var COOKIE_SECONDS = 13 * 30 * 24 * 60 * 60; // 13 months
   var TEXT = {
@@ -53,6 +60,13 @@
   };
 
   var me = document.currentScript;
+  if (!navigator.webdriver) {
+    var beacon = document.createElement("script");
+    beacon.defer = true;
+    beacon.src = "https://static.cloudflareinsights.com/beacon.min.js";
+    beacon.setAttribute("data-cf-beacon", JSON.stringify({ token: CF_TOKEN }));
+    document.head.appendChild(beacon);
+  }
   var id = me && me.getAttribute("data-ga");
   if (!id || !document.body) return;
   var root = document.documentElement;
