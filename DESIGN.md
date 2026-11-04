@@ -188,6 +188,20 @@ requested from Google Analytics and no cookie is set.
   `<html lang>`. The privacy page (`privacy.html`, `fr/privacy.html`, `ar/privacy.html`) says
   what is counted and how to withdraw; if the tag's settings change, change it too.
 
+Cloudflare Web Analytics (#112) is the second counter, with its own site for
+northafricanorigins.com in Brahim's Cloudflare account (JavaScript snippet; the domain's DNS
+answers from GitHub Pages, not Cloudflare's proxy). It sets no cookie and stores nothing in the
+browser, so it needs no consent:
+
+- `js/consent.js` loads `https://static.cloudflareinsights.com/beacon.min.js` with the token in
+  `CF_TOKEN` (public: it ends up in every page) on every page that loads the script, before and
+  whatever the answer. No page carries its own snippet.
+- It skips browsers driven by a program (`navigator.webdriver`: Playwright, Puppeteer,
+  Selenium), so the site's own browser checks don't count as visits. To see the beacon in a
+  check, set `navigator.webdriver` to false in an init script.
+- The privacy page's "Every visit" section (`#counting`, `#comptage` in French) says what it
+  counts. Growlex reads its numbers next to GA4's.
+
 ## Layout
 
 - Container max-width 1180px; full-bleed colour bands break out of it, their content does not.
