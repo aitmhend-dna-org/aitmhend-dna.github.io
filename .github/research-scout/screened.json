@@ -64,6 +64,14 @@
       "date": "2025-12-17",
       "screened": "2026-09-16"
     },
+    "10.1002/ece3.74668": {
+      "decision": "reject",
+      "reason": "Non-human study: population genetics of the small hive beetle Aethina tumida, an insect parasite of bee colonies in Kenya.",
+      "title": "Population Genetics of Small Hive Beetles in Their Native Range Indicates High Gene Flow and Male‐Biased Dispersal",
+      "journal": "Ecology and Evolution",
+      "date": "2026-11-10",
+      "screened": "2026-11-16"
+    },
     "10.1002/ijc.70332": {
       "decision": "reject",
       "reason": "Clinical study of breast cancer subtypes and their risk factors in Ghana.",
@@ -1024,6 +1032,14 @@
       "date": "2026-05-04",
       "screened": "2026-09-16"
     },
+    "10.3389/fmed.2026.2015640": {
+      "decision": "reject",
+      "reason": "Clinical hematology review of Duffy-null frequency in Saudi Arabia, reporting on transfusion support, neutrophil reference intervals and malaria surveillance rather than North African population history.",
+      "title": "The Duffy-null phenotype in Saudi Arabia: distribution, origins and clinical significance",
+      "journal": "Frontiers in Medicine",
+      "date": "2026-10-28",
+      "screened": "2026-11-16"
+    },
     "10.3389/fneur.2026.1918540": {
       "decision": "reject",
       "reason": "A clinical study of inherited Charcot-Marie-Tooth neuropathy gene variants in patients from South Africa and Zambia, with no North African population finding.",
@@ -1136,6 +1152,14 @@
       "date": "2026-01-20",
       "screened": "2026-09-16"
     },
+    "10.3390/ijms27219980": {
+      "decision": "reject",
+      "reason": "Cancer biology: the abstract compares gene essentiality and drug sensitivity in triple-negative breast cancer cell lines, not the history of human populations.",
+      "title": "In Vitro Models of Triple-Negative Breast Cancer of Sub-Saharan African Ancestry Suggest BLM-Centred DNA Damage Repair Dependency and Pevonedistat Sensitivity",
+      "journal": "International Journal of Molecular Sciences",
+      "date": "2026-11-07",
+      "screened": "2026-11-16"
+    },
     "10.3390/insects16121198": {
       "decision": "reject",
       "reason": "Non-human: relatedness of outdoor-biting Anopheles mosquitoes in Zambia.",
@@ -1191,6 +1215,14 @@
       "journal": "Biodiversity Data Journal",
       "date": "2026-08-31",
       "screened": "2026-09-10"
+    },
+    "10.3897/bdj.14.e212183": {
+      "decision": "reject",
+      "reason": "Non-human study: hybridisation between strains of the fall armyworm Spodoptera frugiperda, a crop pest in Burkina Faso.",
+      "title": "Genetic hybridization between C and R strains of Spodoptera frugiperda (Lepidoptera, Noctuidae) in Burkina Faso",
+      "journal": "Biodiversity Data Journal",
+      "date": "2026-11-03",
+      "screened": "2026-11-16"
     },
     "10.4269/ajtmh.25-0696": {
       "decision": "reject",
