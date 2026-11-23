@@ -688,6 +688,14 @@
       "date": "2026-05-31",
       "screened": "2026-09-10"
     },
+    "10.1111/eva.70368": {
+      "decision": "reject",
+      "reason": "A study of the genetic structure of wild boar (Sus scrofa) in northern Europe, so it is non-human and not about North African population history, and North African boar samples serve only as a comparison set.",
+      "title": "Genomic Insights Into Ancestry and Genetic Structure of Wild Boar in Northern Europe",
+      "journal": "Evolutionary Applications",
+      "date": "2026-11-18",
+      "screened": "2026-11-23"
+    },
     "10.1111/mec.70176": {
       "decision": "reject",
       "reason": "Non-human: genomics of the invasive Sahara mustard plant.",
